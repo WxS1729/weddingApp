@@ -1,7 +1,0 @@
-<view>
-  学习云函数{{sum}}
-
-  <button type="primary" bind:tap="getData">
-    获取数据
-  </button>
-</view>
