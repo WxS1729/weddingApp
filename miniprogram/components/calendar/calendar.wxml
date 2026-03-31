@@ -9,7 +9,7 @@
             <text class="calendar-item">三</text>
             <text class="calendar-item">四</text>
             <text class="calendar-item">五</text>
-            <text class="calendar-item">六sd</text>
+            <text class="calendar-item">六</text>
         </view>
         <view class="calendar-line" wx:for="{{ list }}" wx:key="*this" wx:for-item="week">
             <text class="calendar-item" wx:for="{{ week }}" wx:key="*this">
