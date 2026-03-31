@@ -6,14 +6,14 @@ App({
 
         // 云开发服务是否已下架
         // isRemoved: new Date() * 1 >= 1699401600000, // 自动党，用指定时间戳来控制自动下架
-        isRemoved: true, // 手动党（为防止加载初始项目时因为没有云开发环境而报错，我先设为true，等搞好云开发环境后再把它改回false）
+        isRemoved: false, // 手动党（为防止加载初始项目时因为没有云开发环境而报错，我先设为true，等搞好云开发环境后再把它改回false）
 
         // 魔法开关，开启后可使用完整功能，包括填写表单、祝福语轮播和视频号播放器等等
         // magic: new Date() * 1 >= 1699401600000, // 自动党，用指定时间戳来控制自动开启
         magic: true, // 手动党（方便预览完整功能，我先设为true）
 
         // 婚礼日期时间
-        weddingTime: '2023-09-20 17:00:00',
+        weddingTime: '2026-05-24',
 
         // 新郎新娘信息
         couple: [{
@@ -40,7 +40,7 @@ App({
     // 小程序启动时，初始化云开发环境
     onLaunch() {
         !this.globalData.isRemoved && wx.cloud.init({
-            env: 'xxxxxxx', // 云开发环境ID，在云开发控制台里可以查看
+            env: 'cloud1-6gcoidmn8681ebe1', // 云开发环境ID，在云开发控制台里可以查看
             traceUser: true
         })
     },
