@@ -28,6 +28,20 @@
     flex-direction: column;
     align-items: flex-end;
 }
+.img-person{
+  position: absolute;
+  bottom: 0;
+  width: 300rpx;
+}
+
+.img-vinyl{
+  width: 290rpx;
+  height: 290rpx;
+  position: absolute;
+  right: 10%;
+  bottom: 0.1%;
+  animation: rotate 3s linear infinite;
+}
 
 .img-cover-word {
     position: absolute;
@@ -55,12 +69,14 @@
 }
 
 .music {
+    position: relative;
     display: flex;
     align-items: center;
     margin: 60rpx 40rpx 88rpx;
     padding: 20rpx;
-    box-shadow: rgb(194, 194, 194) 0 0 10rpx;
+    background-color: rgba(234, 234, 225, 1);
     border-radius: 10rpx;
+    box-shadow: rgb(153, 153, 153) 0 0 10rpx;
 }
 
 .music-controls {
@@ -125,10 +141,54 @@
 }
 
 .music-right {
-    height: 116rpx;
+    height: 120rpx;
+    width: 320rpx;
     display: flex;
+    gap: 20rpx;
+    flex-direction: column;
+}
+
+.music-info{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     gap: 12rpx;
-    align-items: flex-end;
+    color: rgb(82, 106, 60);
+    font-family: 'muyaosuixin_1','muyaosuixin_2','muyaosuixin' !important;
+}
+
+.music-progress-bar {
+    width: 100%;
+}
+
+.music-line {
+    position: relative;
+    width: 100%;
+    height: 1rpx;
+    background-color: rgba(134, 150, 31, 1);
+    border-radius: 1rpx;
+}
+
+.music-point {
+    position: absolute;
+    left: 35%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 12rpx;
+    height: 12rpx;
+    background-color: rgb(153, 153, 153);
+    border-radius: 50%;
+}
+
+.music-time{
+  font-family: "PingFangSC-Light", "PingFangSC";
+  font-size: 24rpx;
+  line-height: 1;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  font-weight: 100;
+  color: rgb(82, 106, 60);
 }
 
 .music-status {
@@ -580,4 +640,14 @@
 .manager image {
     width: 120rpx;
     height: 120rpx;
+}
+
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);    
+  }
+  to {
+    transform: rotate(360deg);   
+  }
 }

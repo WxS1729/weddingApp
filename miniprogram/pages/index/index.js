@@ -21,6 +21,12 @@ Page({
         },
         weddingTimeStr: [], // 格式化的婚礼日期列表
 
+        // 云存储图片（需要动态获取HTTPS链接）
+        cloudImages: {
+            vinyl: '',
+            music: ''
+        },
+
         // 以上变量都不用动，以下变量是需要手动修改的
 
         // 是否显示彩蛋（由于彩蛋我没有改动，显示的还是我本人的内容，所以我把它默认隐藏起来，方便别人抄作业）
@@ -127,6 +133,9 @@ Page({
         this.timer = null
         this.music = null
         this.isSubmit = false
+
+        // 获取云存储图片的HTTPS链接
+        this.loadCloudImages()
 
         if (!isRemoved) {
             const db = wx.cloud.database()
@@ -399,6 +408,27 @@ Page({
     goInfo() {
         wx.navigateTo({
             url: '../info/index'
+        })
+    },
+
+    // 获取云存储图片的HTTPS链接
+    loadCloudImages() {
+        wx.cloud.getTempFileURL({
+            fileList: [
+                'cloud://cloud1-6gcoidmn8681ebe1.636c-cloud1-6gcoidmn8681ebe1-1405350599/images/vinyl.png',
+                'cloud://cloud1-6gcoidmn8681ebe1.636c-cloud1-6gcoidmn8681ebe1-1405350599/images/music.png'
+            ],
+            success: res => {
+                const fileList = res.fileList
+                const cloudImages = {
+                    vinyl: fileList[0].tempFileURL,
+                    music: fileList[1].tempFileURL
+                }
+                this.setData({ cloudImages })
+            },
+            fail: err => {
+                console.error('获取云存储图片失败', err)
+            }
         })
     }
 })

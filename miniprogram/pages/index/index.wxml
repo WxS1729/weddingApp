@@ -17,10 +17,30 @@
     <view class="lh15">斯人若如虹，遇上方知有</view>
 </view>
 
+<image class="img-vinyl" src="{{ cloudImages.vinyl }}" mode="aspectFit" />
 <view class="music">
-    <view class="music-controls {{ musicIsPaused ? 'paused' : '' }}" bindtap="toggleMusic">
+  <view class="music-left">
+    <image class="img-person" src="{{ cloudImages.music }}" mode="widthFix" />
+  </view>
+  <view class="music-right">
+    <view class="music-info">
+        <view class="music-title">{{ music.name }}</view>
+        <view class="music-singer">{{ music.singer }}</view>
+    </view>
+    <view class="music-progress-bar">
+      <view class="music-line">
+        <view class="music-point"></view>
+      </view>
+    </view>
+    <view class="music-time">
+      <text>5:20</text>
+      <text>13:14</text>
+    </view>
+  </view>
+   <view class="music-controls {{ musicIsPaused ? 'paused' : '' }}" bindtap="toggleMusic">
         <image src="../../images/icon/music.png" mode="aspectFit" />
     </view>
+    <!-- 
     <view class="music-left">
         <view class="music-title">{{ music.name }} - {{ music.singer }}</view>
         <view class="music-desc">已为您播放了歌曲</view>
@@ -28,7 +48,7 @@
     <view class="music-right">
         <image class="music-status" src="https://h5cdn.hunbei.com/editorCustomPic/2022-5-25-dcdPDnJmTyZs5FbjdeWdXShEEYRkN6A4.gif?imageMogr2/auto-orient/thumbnail/48x34>" mode="aspectFit" />
         <image class="music-poster" src="{{ imgs.poster }}" mode="aspectFit" />
-    </view>
+    </view> -->
 </view>
 
 <view class="tc lh21 mb58">

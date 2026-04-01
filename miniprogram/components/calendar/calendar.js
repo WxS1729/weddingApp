@@ -11,7 +11,7 @@ Component({
             value: ''
         }
     },
-
+    
     data: {
         list: [],
         year: '',
