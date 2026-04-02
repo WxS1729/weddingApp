@@ -1,16 +1,15 @@
 page {
-    padding: 40rpx 0;
     width: 100vw;
     box-sizing: border-box;
     font-size: 26rpx;
     font-family: PingFangSC-Light;
-    color: rgb(34, 34, 34);
+    color: #fff;
     letter-spacing: 2rpx;
-}
+    margin: 0;
+    padding: 0;
+    background-color: #000;
+  }
 
-page > view {
-    padding: 0 40rpx;
-}
 
 .couple-cover {
     width: 268rpx;

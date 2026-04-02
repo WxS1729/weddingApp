@@ -1,20 +1,20 @@
 <view class="title">
-    <view>好久不见，婚礼见丨{{ couple[0].name }}&{{ couple[1].name }}</view>
-    <view>我们结婚啦~</view>
+    <view class="title-text">
+      <text class="title-left">WEDDING\nDAY</text>
+      <text class="title-right">5\n24</text>
+    </view>
+    <image class="top-background" src="{{ cloudImages.topBackground }}"  mode="widthFix"/>
+    <image class="top" src="{{ cloudImages.top }}"  mode="widthFix"/>
+    <image class="title-image-text" src="../../images/title-text.png"  mode="widthFix"/>
 </view>
 
-<view class="desc">
+<!-- <view class="desc">
     <text class="author">{{ publisher }}</text>
     <text class="date">{{ weddingTimeStr[0] }}</text>
 </view>
-
+ -->
 <view class="cover-wrap">
-    <image class="img-cover-word" src="https://h5cdn.hunbei.com/editorCustomPic/2023-5-5-XpF8Q3dtRTsbfzTY8WwBwFWpDhiGPe5k?imageMogr2/auto-orient/thumbnail/747x693>" mode="aspectFit" />
-    <view class="cover">
-        <image class="img-invitation" src="https://h5cdn.hunbei.com/editorCustomPic/2022-11-4-N87SPKmaSQW7kZ3i7ZH4QHeMXpYhZzDs.png?imageMogr2/auto-orient/crop/!1455x384a457a363/quality/90|imageMogr2/thumbnail/659x174>" mode="aspectFit" />
-        <image class="img-cover" src="{{ imgs.cover }}" mode="aspectFit" />
-    </view>
-    <view class="lh15">斯人若如虹，遇上方知有</view>
+    <text class="lh15 invitation-text">当收到这封请柬的时候\n我们的还礼已经在倒计时啦~\n\n非常荣幸能与您分享我们的爱情\n诚邀您参加我们的婚礼</text>
 </view>
 
 <image class="img-vinyl" src="{{ cloudImages.vinyl }}" mode="aspectFit" />

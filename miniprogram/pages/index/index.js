@@ -23,8 +23,10 @@ Page({
 
         // 云存储图片（需要动态获取HTTPS链接）
         cloudImages: {
+            top: '',
+            topBackground: '',
             vinyl: '',
-            music: ''
+            music: '',
         },
 
         // 以上变量都不用动，以下变量是需要手动修改的
@@ -55,10 +57,10 @@ Page({
 
         // 酒店信息（通过页面上的「选择位置并获取定位信息」按钮可以获取定位信息，发布前记得把按钮注释起来）
         location: genLocation([{
-            name: '婚宴酒店名XXXXXXXX',
-            address: '详细地址XXXXXXXXXXXXXXX',
-            latitude: 23.03387641906739,
-            longitude: 113.7241439819336
+            name: '莱喜莉·琉光之境',
+            address: '详细地址:济南市天桥区',
+            latitude: 36.6804031066657,
+            longitude: 116.99127764550778
         }])[0],
 
         // 图片信息（其实就是婚纱照了）
@@ -245,7 +247,15 @@ Page({
     },
 
     // 打开酒店定位
-    openLocation() {
+    /**
+ * 打开地图查看指定位置
+ * @param {Object} location - 位置信息对象
+ * @param {number} location.latitude - 纬度坐标
+ * @param {number} location.longitude - 经度坐标 
+ * @param {string} location.name - 位置名称
+ * @param {string} location.address - 详细地址
+ */
+openLocation() {
         const {
             latitude,
             longitude,
@@ -415,14 +425,18 @@ Page({
     loadCloudImages() {
         wx.cloud.getTempFileURL({
             fileList: [
+                'cloud://cloud1-6gcoidmn8681ebe1.636c-cloud1-6gcoidmn8681ebe1-1405350599/images/top.png',
+                'cloud://cloud1-6gcoidmn8681ebe1.636c-cloud1-6gcoidmn8681ebe1-1405350599/images/top_background.png',
                 'cloud://cloud1-6gcoidmn8681ebe1.636c-cloud1-6gcoidmn8681ebe1-1405350599/images/vinyl.png',
                 'cloud://cloud1-6gcoidmn8681ebe1.636c-cloud1-6gcoidmn8681ebe1-1405350599/images/music.png'
             ],
             success: res => {
                 const fileList = res.fileList
                 const cloudImages = {
-                    vinyl: fileList[0].tempFileURL,
-                    music: fileList[1].tempFileURL
+                    top: fileList[0].tempFileURL,
+                    topBackground: fileList[1].tempFileURL,
+                    vinyl: fileList[2].tempFileURL,
+                    music: fileList[3].tempFileURL
                 }
                 this.setData({ cloudImages })
             },

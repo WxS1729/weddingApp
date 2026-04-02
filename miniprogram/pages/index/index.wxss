@@ -2,10 +2,68 @@
 @import '../../common/animation.wxss';
 
 .title {
-    font-size: 36rpx;
-    margin-bottom: 28rpx;
-    letter-spacing: 4rpx;
-    line-height: 1.5;
+    position: relative;
+    width: 100%;
+}
+
+/* 渐变遮罩层 - 图片底部渐变过渡到黑色 */
+.title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 250rpx;
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 1) 0%,
+        rgba(0, 0, 0, 0.95) 10%,
+        rgba(0, 0, 0, 0.8) 25%,
+        rgba(0, 0, 0, 0.5) 45%,
+        rgba(0, 0, 0, 0.25) 65%,
+        rgba(0, 0, 0, 0.1) 85%,
+        transparent 100%
+    );
+    pointer-events: none;
+    z-index: 1;
+}
+
+.top-background{
+  width: 100%;
+  display: block;
+}
+
+.top,.title-image-text {
+  width: 90%;
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.title-image-text{
+  left: 57%;
+
+}
+
+.title-text{
+  display: flex;
+  position: absolute;
+  color: #ffffff;
+  width: 85%;
+  left: 52%;
+  top: 8%;
+  transform: translateX(-50%);
+  font-size: large;
+}
+
+.title-left{
+  line-height: 50rpx;
+}
+
+.title-right{
+  margin-left: 60%;
 }
 
 .desc {
@@ -27,7 +85,12 @@
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    padding: 0 20rpx;
 }
+.invitation-text{
+  text-align: right;
+}
+
 .img-person{
   position: absolute;
   bottom: 0;
@@ -35,37 +98,12 @@
 }
 
 .img-vinyl{
-  width: 290rpx;
-  height: 290rpx;
+  width: 270rpx;
+  height: 270rpx;
   position: absolute;
   right: 10%;
-  bottom: 0.1%;
+  bottom: 1.1%;
   animation: rotate 3s linear infinite;
-}
-
-.img-cover-word {
-    position: absolute;
-    left: 20rpx;
-    bottom: 0;
-    width: 498rpx;
-    height: 462rpx;
-}
-
-.cover {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 186rpx;
-}
-
-.img-invitation {
-    width: 436rpx;
-    height: 116rpx;
-    margin-bottom: 16rpx;
-}
-
-.img-cover {
-    width: 454rpx;
-    height: 652rpx;
 }
 
 .music {
@@ -77,6 +115,7 @@
     background-color: rgba(234, 234, 225, 1);
     border-radius: 10rpx;
     box-shadow: rgb(153, 153, 153) 0 0 10rpx;
+    z-index: 2;
 }
 
 .music-controls {
@@ -141,10 +180,10 @@
 }
 
 .music-right {
-    height: 120rpx;
+    height: 140rpx;
     width: 320rpx;
     display: flex;
-    gap: 20rpx;
+    gap: 30rpx;
     flex-direction: column;
 }
 
@@ -189,16 +228,6 @@
   width: 100%;
   font-weight: 100;
   color: rgb(82, 106, 60);
-}
-
-.music-status {
-    width: 32rpx;
-    height: 22rpx;
-}
-
-.music-poster {
-    width: 116rpx;
-    height: 116rpx;
 }
 
 .img-introduce {
