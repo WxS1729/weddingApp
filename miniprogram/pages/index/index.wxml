@@ -1,3 +1,6 @@
+<view class="music-controls {{ musicIsPaused ? 'paused' : '' }}" bindtap="toggleMusic">
+    <image src="../../images/icon/music.png" mode="aspectFit" />
+</view>
 <view class="title">
     <view class="title-text">
       <text class="title-left">WEDDING\nDAY</text>
@@ -7,7 +10,6 @@
     <image class="top" src="{{ cloudImages.top }}"  mode="widthFix"/>
     <image class="title-image-text" src="../../images/title-text.png"  mode="widthFix"/>
 </view>
-
 <!-- <view class="desc">
     <text class="author">{{ publisher }}</text>
     <text class="date">{{ weddingTimeStr[0] }}</text>
@@ -37,9 +39,6 @@
       <text>13:14</text>
     </view>
   </view>
-   <view class="music-controls {{ musicIsPaused ? 'paused' : '' }}" bindtap="toggleMusic">
-        <image src="../../images/icon/music.png" mode="aspectFit" />
-    </view>
     <!-- 
     <view class="music-left">
         <view class="music-title">{{ music.name }} - {{ music.singer }}</view>
