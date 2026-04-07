@@ -16,12 +16,12 @@
     height: 250rpx;
     background: linear-gradient(
         to top,
-        rgba(0, 0, 0, 1) 0%,
-        rgba(0, 0, 0, 0.95) 10%,
-        rgba(0, 0, 0, 0.8) 25%,
-        rgba(0, 0, 0, 0.5) 45%,
-        rgba(0, 0, 0, 0.25) 65%,
-        rgba(0, 0, 0, 0.1) 85%,
+        rgba(34, 34, 34, 1) 0%,
+        rgba(34, 34, 34, 0.95) 10%,
+        rgba(34, 34, 34, 0.8) 25%,
+        rgba(34, 34, 34, 0.5) 45%,
+        rgba(34, 34, 34, 0.25) 65%,
+        rgba(34, 34, 34, 0.1) 85%,
         transparent 100%
     );
     pointer-events: none;
@@ -104,7 +104,7 @@
   width: 270rpx;
   height: 270rpx;
   position: absolute;
-  bottom: -15%;
+  bottom: -19%;
   right: 10%;
   animation: rotate 3s linear infinite;
   z-index: -1;
@@ -230,6 +230,107 @@
   justify-content: space-between;
   width: 100%;
   font-weight: 100;
+}
+
+.invitation{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20rpx;
+  position: relative;
+}
+
+.invitation-image{
+  width: 60%;
+}
+
+.xi-image{
+  width: 10%;
+}
+
+.yellowAndPurple-image{
+  position: relative;
+  left: -10%;
+}
+
+.flat{
+  width: 50rpx;
+  position: absolute;
+}
+
+.blue-flat{
+  width: 50rpx;
+  position: absolute;
+  bottom: 50%;
+  right: 18%;
+  animation: float-up-down 2s ease-in-out infinite;
+  animation-delay: 0.5s;
+}
+
+.pink-flat{
+  width: 50rpx;
+  position: absolute;
+  bottom: 20%;
+  right: 10%;
+  animation: float-up-down 2s ease-in-out infinite;
+}
+
+.after-invitation{
+  border-left: 3rpx solid #fff;
+  height: 300rpx;
+  position: relative;
+  left: 20%;
+  padding: 30rpx;
+  display: flex;
+  flex-direction: column;
+  gap: 20rpx;
+}
+
+.yjjx{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 100rpx;
+}
+
+.yjjx1-image{
+  height: 350rpx;
+}
+
+.yjjx2{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.yjjx2-image{
+  height: 350rpx;
+}
+
+.weiAndsong{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 100rpx;
+}
+
+.black-background-image{
+  width: 100%;
+  opacity: 0.2;
+}
+
+.test-text{
+  font-family: 'Caveat' !important;
+}
+
+.love-letter{
+  position: absolute;
+  bottom: -10%;
+  right: 0rpx;
 }
 
 .img-introduce {
@@ -680,5 +781,14 @@
   }
   to {
     transform: rotate(360deg);   
+  }
+}
+
+@keyframes float-up-down {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20rpx);
   }
 }

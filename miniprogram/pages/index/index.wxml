@@ -1,6 +1,7 @@
 <view class="music-controls {{ musicIsPaused ? 'paused' : '' }}" bindtap="toggleMusic">
     <image src="../../images/icon/music.png" mode="aspectFit" />
 </view>
+
 <view class="title">
     <view class="title-text">
       <text class="title-left">WEDDING\nDAY</text>
@@ -10,13 +11,9 @@
     <image class="top" src="{{ cloudImages.top }}"  mode="widthFix"/>
     <image class="title-image-text" src="../../images/title-text.png"  mode="widthFix"/>
 </view>
-<!-- <view class="desc">
-    <text class="author">{{ publisher }}</text>
-    <text class="date">{{ weddingTimeStr[0] }}</text>
-</view>
- -->
-<view class="cover-wrap">
-    <text class="lh15 invitation-text">当收到这封请柬的时候\n我们的还礼已经在倒计时啦~\n\n非常荣幸能与您分享我们的爱情\n诚邀您参加我们的婚礼</text>
+
+<view class="cover-wrap lh21">
+    <text class="lh15 invitation-text">当收到这封请柬的时候\n我们的还礼已经在倒计时啦~\n\n非常荣幸能与您分享我们的爱情\n诚邀您参加我们的婚礼\n\n以前觉得婚礼是一则官方公告\n现在才明白\n这是一场为数不多的相聚</text>
 </view>
 
 <image class="img-vinyl" src="{{ cloudImages.vinyl }}" mode="aspectFit" />
@@ -39,30 +36,48 @@
       <text>13:14</text>
     </view>
   </view>
-    <!-- 
-    <view class="music-left">
-        <view class="music-title">{{ music.name }} - {{ music.singer }}</view>
-        <view class="music-desc">已为您播放了歌曲</view>
-    </view>
-    <view class="music-right">
-        <image class="music-status" src="https://h5cdn.hunbei.com/editorCustomPic/2022-5-25-dcdPDnJmTyZs5FbjdeWdXShEEYRkN6A4.gif?imageMogr2/auto-orient/thumbnail/48x34>" mode="aspectFit" />
-        <image class="music-poster" src="{{ imgs.poster }}" mode="aspectFit" />
-    </view> -->
 </view>
 
-<view class="tc lh21 mb58">
-    <view>hi~亲爱的你~</view>
-    <view>当收到这封请柬的时候</view>
-    <view class="mb58">我们的婚礼已经在倒计时啦</view>
-    <view>以前觉得婚礼是一则官方公告</view>
-    <view>现在才明白</view>
-    <view>这是一场为数不多的相聚</view>
-    <view>是千里迢迢的奔赴</view>
-    <view class="mb58">是不计得失的支持</view>
-    <view>好久不见，婚礼见</view>
-    <view>❤</view>
+<view class="invitation mb152">
+  <image class="invitation-image" src="../../images/invitation.png" mode="widthFix"/>
+  <image class="xi-image" src="../../images/xi.png" mode="widthFix"/>
+  <view>一次又一次将私有浪漫公之于众</view>
+  <view>是一次又一次觉得拥有你是值得炫耀的事</view>
+  <view>隗许舜&宋霆</view>
+  <image class="yellowAndPurple-image" src="{{ cloudImages.yellowAndPurple }}" mode="widthFix" />
+  <image class="flat pink-flat" src="../../images/pinkFlat.png" mode="widthFix"/>
+  <image class="flat blue-flat" src="../../images/blueFlat.png" mode="widthFix"/>
+  <image class="love-letter" src="../../images/loveLetter.png" mode="widthFix" />
 </view>
 
+<view class="after-invitation mb100">
+  <view>感谢与我们</view>
+  <view>共同分享与见证这一美妙的时刻</view>
+  <view>愿某天想起</view>
+  <view>仍能记起这一天</view>
+  <view>真挚的誓言、感动的泪水</view>
+  <view>以及空气中喜悦的气息</view>
+</view>
+<view class="yjjx mb100">
+  <image class="yjjx1-image" src="{{ cloudImages.yjjx1 }}" mode="heightFix"/>
+  <view class="yjjx2" style="width:100%">
+    <image src="../../images/weAreMerried.png" style="width: 60%" mode="widthFix"/>
+    <image class="yjjx2-image" src="{{ cloudImages.yjjx2 }}" mode="heightFix"/>
+  </view>
+</view>
+<view class="weiAndsong">
+  <view>
+    Wei & Song
+  </view>
+  <text>
+    你不是我权衡利弊后的选择\n而是我怦然心动后明知不可为而为之的选择
+  </text>
+  <view>
+    Around the galaxy there are no brighter stars than you
+  </view>
+  <image class="black-background-image" src="{{ cloudImages.blackBackground }}" mode="widthFix"/>
+</view>
+<!-- <text class="test-text">We are family</text> -->
 <view class="tc lh21 mb100">
     <image class="img-introduce" src="https://h5cdn.hunbei.com/editorCustomPic/2022-8-22-WNhBXi3ty4fw7dwFBxSZneDKYtz754ya.png?imageMogr2/auto-orient/thumbnail/542.00x58.84>" mode="aspectFit" />
     <view class="moon">
