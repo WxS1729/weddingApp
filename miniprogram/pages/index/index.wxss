@@ -97,7 +97,8 @@
 .img-person{
   position: absolute;
   bottom: 0;
-  width: 300rpx;
+  width: 315rpx;
+  left:15rpx;
 }
 
 .img-vinyl{
@@ -318,11 +319,75 @@
   gap: 100rpx;
 }
 
+.weiAndsong-image{
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  height: auto;
+  min-height: 600rpx;
+}
+
+.black-background-wrap{
+  position: absolute;
+  width: 110%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.black-background-wrap::before,
+.black-background-wrap::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 150rpx;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.black-background-wrap::before {
+  top: 0;
+  background: linear-gradient(to bottom, #222 0%, rgba(34, 34, 34, 0.8) 30%, rgba(34, 34, 34, 0.4) 60%, transparent 100%);
+}
+
+.black-background-wrap::after {
+  bottom: 0;
+  background: linear-gradient(to top, #222 0%, rgba(34, 34, 34, 0.8) 30%, rgba(34, 34, 34, 0.4) 60%, transparent 100%);
+}
+
 .black-background-image{
+  position: absolute;
   width: 100%;
   opacity: 0.2;
 }
 
+.weiAndsong-person-image{
+  position: relative;
+  left: 30%;
+  z-index: 2;
+}
+
+.weiAndsong-end{
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.weiAndsong-end-text{
+  width: 280rpx;
+  padding: 20rpx;
+}
+
+.believe{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20rpx;
+}
 .test-text{
   font-family: 'Caveat' !important;
 }

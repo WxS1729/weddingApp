@@ -65,7 +65,7 @@
     <image class="yjjx2-image" src="{{ cloudImages.yjjx2 }}" mode="heightFix"/>
   </view>
 </view>
-<view class="weiAndsong">
+<view class="weiAndsong mb100">
   <view>
     Wei & Song
   </view>
@@ -75,7 +75,34 @@
   <view>
     Around the galaxy there are no brighter stars than you
   </view>
-  <image class="black-background-image" src="{{ cloudImages.blackBackground }}" mode="widthFix"/>
+  <view class="weiAndsong-image">
+    <view class="black-background-wrap">
+      <image class="black-background-image" src="{{ cloudImages.blackBackground }}" mode="widthFix"/>
+    </view>
+    <image class="weiAndsong-person-image"  src="{{ cloudImages.fuqiang }}" mode="widthFix"/>
+    <view class="weiAndsong-end">
+      <view class="weiAndsong-end-text">
+        "There is nothing I want more for myself than a future with you."
+      </view>
+    </view>
+  </view>
+</view>
+<view class="believe mb100">
+  <view>
+    我相信这世界上，有些人有些事有些爱
+  </view>
+  <view>
+    在见到的第一次，就注定要羁绊一生
+  </view>
+  <view>
+    就注定像一棵树一样
+  </view>
+  <view>
+    生长在心里，生生世世
+  </view>
+</view>
+<view class="step-wrap">
+  <image src="{{ cloudImages.step }}" mode="widthFix"/>
 </view>
 <!-- <text class="test-text">We are family</text> -->
 <view class="tc lh21 mb100">

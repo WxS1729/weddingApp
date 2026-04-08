@@ -429,11 +429,12 @@ openLocation() {
                 'cloud://cloud1-6gcoidmn8681ebe1.636c-cloud1-6gcoidmn8681ebe1-1405350599/images/top_background.png',
                 'cloud://cloud1-6gcoidmn8681ebe1.636c-cloud1-6gcoidmn8681ebe1-1405350599/images/vinyl.png',
                 'cloud://cloud1-6gcoidmn8681ebe1.636c-cloud1-6gcoidmn8681ebe1-1405350599/images/music.png',
-                'cloud://cloud1-6gcoidmn8681ebe1.636c-cloud1-6gcoidmn8681ebe1-1405350599/images/invitation.jpg',
+                'cloud://cloud1-6gcoidmn8681ebe1.636c-cloud1-6gcoidmn8681ebe1-1405350599/images/step.jpg',
                 'cloud://cloud1-6gcoidmn8681ebe1.636c-cloud1-6gcoidmn8681ebe1-1405350599/images/yjjx1.png',
                 'cloud://cloud1-6gcoidmn8681ebe1.636c-cloud1-6gcoidmn8681ebe1-1405350599/images/yjjx2.png',
                 'cloud://cloud1-6gcoidmn8681ebe1.636c-cloud1-6gcoidmn8681ebe1-1405350599/images/yellowAndPurple.png',
-                'cloud://cloud1-6gcoidmn8681ebe1.636c-cloud1-6gcoidmn8681ebe1-1405350599/images/blackBackground.png'
+                'cloud://cloud1-6gcoidmn8681ebe1.636c-cloud1-6gcoidmn8681ebe1-1405350599/images/blackBackground.png',
+                'cloud://cloud1-6gcoidmn8681ebe1.636c-cloud1-6gcoidmn8681ebe1-1405350599/images/fuqiang.png'
             ],
             success: res => {
                 const fileList = res.fileList
@@ -442,11 +443,12 @@ openLocation() {
                     topBackground: fileList[1].tempFileURL,
                     vinyl: fileList[2].tempFileURL,
                     music: fileList[3].tempFileURL,
-                    invitation: fileList[4].tempFileURL,
+                    step: fileList[4].tempFileURL,
                     yjjx1: fileList[5].tempFileURL,
                     yjjx2: fileList[6].tempFileURL,
                     yellowAndPurple: fileList[7].tempFileURL,
                     blackBackground: fileList[8].tempFileURL,
+                    fuqiang: fileList[9].tempFileURL,
                 }
                 this.setData({ cloudImages })
             },
