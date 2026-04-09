@@ -10,6 +10,18 @@ page {
     background-color: #222;
   }
 
+button {
+  background-color: transparent;
+}
+
+button::after {
+  border: none;
+}
+
+.button-hover {
+  background-color: transparent !important;
+}
+
 
 .couple-cover {
     width: 268rpx;

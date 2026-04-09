@@ -101,8 +101,48 @@
     生长在心里，生生世世
   </view>
 </view>
-<view class="step-wrap">
-  <image src="{{ cloudImages.step }}" mode="widthFix"/>
+<view class="step-wrap mb100">
+  <image class="step-image-text" src="../../images/step.png" mode="widthFix"/>
+  <image class="step-image-person" src="{{ cloudImages.step }}" mode="widthFix"/>
+  <view class="step-text">
+    I hide the roses behind me expectin to meet you at any time.
+  </view>
+</view>
+
+<view class="tel-wrap mb100">
+  <view class="tel-child">
+  <button hover-class="none" bindtap="call" data-phone="{{ couple[0].number }}">
+    <view class="tel-icon-wrap tel-icon-wrap-man">
+      <image class="tel-icon-bg" src="../../images/border.png" mode="widthFix" />
+      <image class="tel-icon" src="../../images/icon/phone-man.png" mode="widthFix" />
+      新郎
+    </view>
+  </button>
+    <image class="tel-image" src="{{ cloudImages.telMan }}" mode="widthFix"/>
+  </view>
+  <view class="tel-child">
+    <button hover-class="none" bindtap="call" data-phone="{{ couple[1].number }}">
+      <view class="tel-icon-wrap tel-icon-wrap-girl">
+        <image class="tel-icon-bg" src="../../images/border.png" mode="widthFix" />
+        <image class="tel-icon" src="../../images/icon/phone-girl.png" mode="widthFix" />
+        新娘
+      </view>
+    </button>
+    <image class="tel-image" src="{{ cloudImages.telGirl }}" mode="widthFix"/>
+  </view>
+</view>
+<view class="end-text mb100">
+  <view>
+    只是一想到你，世界在明亮的光晕里倒退
+  </view>
+  <view>
+    一些我们以为永恒的，包括时间都不堪一击
+  </view>
+</view>
+
+<view class="exchange-wrap mb100">
+  <image class="exchange-image" src="{{ cloudImages.exchange1 }}" mode="widthFix"/>
+  <image class="exchange-image" src="{{ cloudImages.exchange2 }}" mode="widthFix"/>
 </view>
 <!-- <text class="test-text">We are family</text> -->
 <view class="tc lh21 mb100">
@@ -256,13 +296,13 @@
     <view class="location-mask" bindtap="openLocation"></view>
 
     <!-- 仅用于获取定位信息，获取后会打印到控制台并写入到粘贴板，正式发布时记得注释起来 -->
-    <button type="primary" size="mini" bindtap="chooseLocation">选择位置并获取定位信息</button>
+    <button type="primary" size="mini" hover-class="none" bindtap="chooseLocation">选择位置并获取定位信息</button>
 </view>
 
 <view class="phone mb100">
     <view class="phone-item" wx:for="{{ couple }}" wx:key="name">
         <image class="couple-cover" src="{{ item.image }}" mode="aspectFit" />
-        <button bindtap="call" data-phone="{{ item.number }}"><image src="../../images/icon/phone.png" mode="aspectFit" />联系{{ item.alias }}</button>
+        <button hover-class="none" bindtap="call" data-phone="{{ item.number }}"><image src="../../images/icon/phone.png" mode="aspectFit" />联系{{ item.alias }}</button>
     </view>
 </view>
 
@@ -279,7 +319,7 @@
         <view>
             <textarea type="text" placeholder="祝福语，可以上墙哦~" name="greeting" value="{{ form.greeting }}" placeholder-class="form-input-placeholder" maxlength="140" disable-default-padding />
         </view>
-        <button form-type="submit" open-type="getUserInfo">{{ name ? '更新' : '提交' }}</button>
+        <button hover-class="none" form-type="submit" open-type="getUserInfo">{{ name ? '更新' : '提交' }}</button>
     </view>
 </form>
 

@@ -288,9 +288,10 @@ openLocation() {
     },
 
     // 呼叫
-    call(e) {
+
+call(e) {
         wx.makePhoneCall({
-            phoneNumber: e.target.dataset.phone
+            phoneNumber: e.currentTarget.dataset.phone
         })
     },
 
@@ -401,8 +402,8 @@ openLocation() {
     // 跳转到联系新郎新娘板块
     goPhone() {
         wx.pageScrollTo({
-            selector: '.phone',
-            offsetTop: -200
+            selector: '.step-wrap',
+            offsetTop: 400
         })
     },
 
@@ -434,7 +435,11 @@ openLocation() {
                 'cloud://cloud1-6gcoidmn8681ebe1.636c-cloud1-6gcoidmn8681ebe1-1405350599/images/yjjx2.png',
                 'cloud://cloud1-6gcoidmn8681ebe1.636c-cloud1-6gcoidmn8681ebe1-1405350599/images/yellowAndPurple.png',
                 'cloud://cloud1-6gcoidmn8681ebe1.636c-cloud1-6gcoidmn8681ebe1-1405350599/images/blackBackground.png',
-                'cloud://cloud1-6gcoidmn8681ebe1.636c-cloud1-6gcoidmn8681ebe1-1405350599/images/fuqiang.png'
+                'cloud://cloud1-6gcoidmn8681ebe1.636c-cloud1-6gcoidmn8681ebe1-1405350599/images/fuqiang.png',
+                'cloud://cloud1-6gcoidmn8681ebe1.636c-cloud1-6gcoidmn8681ebe1-1405350599/images/tel_man.png',
+                'cloud://cloud1-6gcoidmn8681ebe1.636c-cloud1-6gcoidmn8681ebe1-1405350599/images/tel_girl.png',
+                'cloud://cloud1-6gcoidmn8681ebe1.636c-cloud1-6gcoidmn8681ebe1-1405350599/images/exchange1.jpg',
+                'cloud://cloud1-6gcoidmn8681ebe1.636c-cloud1-6gcoidmn8681ebe1-1405350599/images/exchange2.jpg'
             ],
             success: res => {
                 const fileList = res.fileList
@@ -449,6 +454,10 @@ openLocation() {
                     yellowAndPurple: fileList[7].tempFileURL,
                     blackBackground: fileList[8].tempFileURL,
                     fuqiang: fileList[9].tempFileURL,
+                    telMan: fileList[10].tempFileURL,
+                    telGirl: fileList[11].tempFileURL,
+                    exchange1: fileList[12].tempFileURL,
+                    exchange2: fileList[13].tempFileURL,
                 }
                 this.setData({ cloudImages })
             },

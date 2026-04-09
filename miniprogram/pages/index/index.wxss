@@ -388,6 +388,7 @@
   align-items: center;
   gap: 20rpx;
 }
+
 .test-text{
   font-family: 'Caveat' !important;
 }
@@ -396,6 +397,109 @@
   position: absolute;
   bottom: -10%;
   right: 0rpx;
+}
+
+.step-wrap{
+  width: 100%;
+  position: relative;
+  gap: 20rpx;
+}
+
+.step-image-text{
+  position: absolute;
+  right: 4%;
+  width: 500rpx;
+}
+
+.step-image-person{
+  margin-top: 170rpx;
+}
+
+.step-text{
+  position: absolute;
+  bottom: 20rpx;
+  right: 0rpx;
+  width: 400rpx;
+  font-size: 36rpx;
+}
+
+.tel-wrap{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 20rpx;
+}
+
+.tel-child{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50rpx;
+}
+
+.tel-image{
+  width: 500rpx;
+}
+
+.tel-icon-wrap{
+  width: 200rpx;
+  height: 100rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.tel-icon-bg{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.tel-icon-wrap-man{
+  color: #56c1f9;
+}
+
+.tel-icon-wrap-girl{
+  color: #fb2884;
+}
+
+.tel-icon{
+  width: 50rpx;
+  margin-right: 20rpx;
+}
+
+.end-text{
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  gap: 20rpx;
+  padding: 0 20rpx;
+  text-align: right;
+}
+.exchange-wrap{
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  height: 700rpx;
+
+}
+
+.exchange-image{
+  border-radius: 20rpx;
+  overflow: hidden;
+  width: 80%;
+  position: absolute;
 }
 
 .img-introduce {
@@ -765,6 +869,7 @@
     align-items: flex-end;
     width: 100%;
     box-sizing: border-box;
+    z-index: 20;
 }
 
 .greetings-list {
