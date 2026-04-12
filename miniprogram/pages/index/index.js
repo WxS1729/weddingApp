@@ -140,14 +140,15 @@ Page({
     onPageScroll(e) {
         if (!this._exchangeTop) return
         const rectTop = this._exchangeTop - e.scrollTop
+        const h = this._exchangeHeight || 275
 
         let o1, o2
-        if (rectTop >= 60) {
+        if (rectTop >= -320) {
             o1 = 1; o2 = 0
-        } else if (rectTop <= -215) {
+        } else if (rectTop <= -320 - h) {
             o1 = 0; o2 = 1
         } else {
-            const progress = (60 - rectTop) / 275
+            const progress = (-320 - rectTop) / h
             o1 = 1 - progress
             o2 = progress
         }
@@ -311,6 +312,7 @@ Page({
         query.exec(res => {
             if (res[0]) {
                 this._exchangeTop = res[0].top
+                this._exchangeHeight = res[0].height
             }
         })
         if (this.music === null) {

@@ -145,8 +145,8 @@
 </view>
 
 <view class="exchange-wrap mb100">
-  <image class="exchange-image exchange-image-1" style="opacity:{{ exchangeOpacity1 }}" src="{{ cloudImages.exchange1 }}" mode="widthFix"/>
-  <image class="exchange-image exchange-image-2" style="opacity:{{ exchangeOpacity2 }}" src="{{ cloudImages.exchange2 }}" mode="widthFix"/>
+  <image class="exchange-image exchange-image-1" style="opacity:{{ exchangeOpacity1 }}" src="{{ cloudImages.exchange1 }}" mode="aspectFill"/>
+  <image class="exchange-image exchange-image-2" style="opacity:{{ exchangeOpacity2 }}" src="{{ cloudImages.exchange2 }}" mode="aspectFill"/>
   <image class="xi-image2" src="../../images/xi.png" mode="widthFix"/>
 </view>
 
