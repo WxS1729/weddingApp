@@ -73,6 +73,17 @@
   color: rgb(255, 195, 104);
 }
 
+.cp{
+  color: rgb(255, 54, 141);
+}
+/* 文字大小 */
+.size-26{
+  font-size: 26rpx;
+}
+
+.size-36{
+  font-size: 36rpx;
+}
 /* 组件 */
 swiper {
     width: 100% !important;

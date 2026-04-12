@@ -246,6 +246,12 @@
   width: 60%;
 }
 
+.weiAndSong-title{
+  font-size: 36rpx;
+  text-decoration: underline;
+  font-style: italic;
+}
+
 .xi-image{
   width: 10%;
 }
@@ -294,10 +300,18 @@
   flex-direction: column;
   align-items: center;
   gap: 100rpx;
+  position: relative;
 }
 
 .yjjx1-image{
   height: 350rpx;
+}
+
+.love-letter2{
+  position:absolute;
+  top: 230rpx;
+  left: 50rpx;
+  width: 350rpx;
 }
 
 .yjjx2{
@@ -316,8 +330,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 100rpx;
+  gap: 30rpx;
 }
+
 
 .weiAndsong-image{
   position: relative;
@@ -365,7 +380,7 @@
 
 .weiAndsong-person-image{
   position: relative;
-  left: 30%;
+  left: 33%;
   z-index: 2;
 }
 
@@ -378,8 +393,10 @@
 }
 
 .weiAndsong-end-text{
-  width: 280rpx;
-  padding: 20rpx;
+  width: 310rpx;
+  position: relative;
+  left: 60rpx;
+  top: 150rpx;
 }
 
 .believe{
@@ -390,14 +407,12 @@
   gap: 20rpx;
 }
 
-.test-text{
-  font-family: 'Caveat' !important;
-}
-
-.love-letter{
+.love-letter1{
   position: absolute;
-  bottom: -10%;
-  right: 0rpx;
+  bottom: -6%;
+  right: -20rpx;
+  width: 500rpx;
+  font-size: 36rpx;
 }
 
 .step-wrap{
@@ -418,10 +433,9 @@
 
 .step-text{
   position: absolute;
-  bottom: 20rpx;
+  bottom: -120rpx;
   right: 0rpx;
-  width: 400rpx;
-  font-size: 36rpx;
+  width: 350rpx;
 }
 
 .tel-wrap{
@@ -461,14 +475,6 @@
   width: 100%;
   height: 100%;
   z-index: 0;
-}
-
-.tel-icon-wrap-man{
-  color: #56c1f9;
-}
-
-.tel-icon-wrap-girl{
-  color: #fb2884;
 }
 
 .tel-icon{
@@ -596,7 +602,6 @@
   height:100rpx;
   border: 2rpx solid rgb(255, 195, 104);
   border-radius: 12rpx;
-  background: rgba(232, 130, 42, 0.1);
   overflow: hidden;
   transform: translateZ(0);
   -webkit-backface-visibility: hidden;
@@ -645,7 +650,6 @@
 }
 
 .countdown-text{
-  color:rgb(255, 54, 141);
   font-size: 40rpx;
   z-index: 2;
   width: 500rpx;
@@ -1007,9 +1011,9 @@
 
 .end1-text{
   position: absolute;
-  right: 30rpx;
-  top: -50rpx;
-  width: 400rpx;
+  right: 10rpx;
+  top: -100rpx;
+  width: 350rpx;
 }
 
 .end2{
@@ -1018,6 +1022,12 @@
   align-items: center;
 }
 
+.xi-image3{
+  width: 100rpx;
+  z-index:2;
+  position: relative;
+  left: -50rpx;
+}
 
 .end3{
   position: relative;
@@ -1029,12 +1039,20 @@
 .end3-text{
   position: absolute;
   left: 30rpx;
-  bottom: -50rpx;
-  width: 400rpx;
+  bottom: -120rpx;
+  width: 350rpx;
 }
 
 .end-text-wrap{
-  height: 600rpx;
+  height: 550rpx;
+}
+
+.end-eng{
+  text-decoration: underline;
+}
+
+.thanks{
+  font-style: italic;
 }
 
 .tips {

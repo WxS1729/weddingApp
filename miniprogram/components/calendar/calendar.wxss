@@ -1,6 +1,7 @@
 .calendar {
     width: 576rpx;
     margin: 0 auto 40rpx;
+    color: rgb(255, 195, 104);
     padding: 72rpx;
     line-height: 1;
     box-sizing: border-box;
@@ -65,7 +66,7 @@
 .calendar-current {
     position: relative;
     z-index: 20;
-    color: white;
+    color: black;
 }
 
 .calendar-line .calendar-current-dot {
@@ -73,6 +74,7 @@
     display: block;
     width: 56rpx;
     height: 56rpx;
+    background-color: rgb(255, 195, 104);
     top: -6rpx;
     border-radius: 50%;
     z-index: 11;

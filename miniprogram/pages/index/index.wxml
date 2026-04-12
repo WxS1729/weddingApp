@@ -13,7 +13,7 @@
 </view>
 
 <view class="cover-wrap lh21">
-    <text class="lh15 invitation-text">当收到这封请柬的时候\n我们的还礼已经在倒计时啦~\n\n非常荣幸能与您分享我们的爱情\n诚邀您参加我们的婚礼\n\n以前觉得婚礼是一则官方公告\n现在才明白\n这是一场为数不多的相聚</text>
+    <text class="lh15 invitation-text">当收到这封请柬的时候\n我们的婚礼已经在倒计时啦~\n\n非常荣幸能与您分享我们的爱情\n诚邀您参加我们的婚礼\n\n以前觉得婚礼是一则官方公告\n现在才明白\n这是一场为数不多的相聚</text>
 </view>
 
 <image class="img-vinyl" src="{{ cloudImages.vinyl }}" mode="aspectFit" />
@@ -38,19 +38,19 @@
   </view>
 </view>
 
-<view class="invitation mb152">
+<view class="invitation mb152 lh21">
   <image class="invitation-image" src="../../images/invitation.png" mode="widthFix"/>
   <image class="xi-image" src="../../images/xi.png" mode="widthFix"/>
   <view>一次又一次将私有浪漫公之于众</view>
   <view>是一次又一次觉得拥有你是值得炫耀的事</view>
-  <view>隗许舜&宋霆</view>
+  <view class="weiAndSong-title co">隗许舜 & 宋霆</view>
   <image class="yellowAndPurple-image" src="{{ cloudImages.yellowAndPurple }}" mode="widthFix" />
   <image class="flat pink-flat" src="../../images/pinkFlat.png" mode="widthFix"/>
   <image class="flat blue-flat" src="../../images/blueFlat.png" mode="widthFix"/>
-  <image class="love-letter" src="../../images/loveLetter.png" mode="widthFix" />
+  <view class="cp love-letter1">As the clouds and mist dissipate, I loveyou and everyone knows it.</view>
 </view>
 
-<view class="after-invitation mb100">
+<view class="after-invitation mb100 lh15">
   <view>感谢与我们</view>
   <view>共同分享与见证这一美妙的时刻</view>
   <view>愿某天想起</view>
@@ -60,20 +60,24 @@
 </view>
 <view class="yjjx mb100">
   <image class="yjjx1-image" src="{{ cloudImages.yjjx1 }}" mode="heightFix"/>
+  <image class="love-letter2" src="../../images/loveLetter.png" mode="widthFix"/>
   <view class="yjjx2" style="width:100%">
     <image src="../../images/weAreMerried.png" style="width: 60%" mode="widthFix"/>
     <image class="yjjx2-image" src="{{ cloudImages.yjjx2 }}" mode="heightFix"/>
   </view>
 </view>
-<view class="weiAndsong mb100">
-  <view>
+<view class="weiAndsong mb152">
+  <view class="co weiAndSong-title">
     Wei & Song
   </view>
-  <text>
+  <text class="lh21 tc">
     你不是我权衡利弊后的选择\n而是我怦然心动后明知不可为而为之的选择
   </text>
-  <view>
-    Around the galaxy there are no brighter stars than you
+  <view class="co size-36">
+    Around the galaxy there are no
+  </view>
+  <view class="co size-36">
+    brighter stars than you
   </view>
   <view class="weiAndsong-image">
     <view class="black-background-wrap">
@@ -81,7 +85,7 @@
     </view>
     <image class="weiAndsong-person-image"  src="{{ cloudImages.fuqiang }}" mode="widthFix"/>
     <view class="weiAndsong-end">
-      <view class="weiAndsong-end-text">
+      <view class="weiAndsong-end-text cb size-36 lh21">
         "There is nothing I want more for myself than a future with you."
       </view>
     </view>
@@ -101,10 +105,10 @@
     生长在心里，生生世世
   </view>
 </view>
-<view class="step-wrap mb100">
+<view class="step-wrap mb152">
   <image class="step-image-text" src="../../images/step.png" mode="widthFix"/>
   <image class="step-image-person" src="{{ cloudImages.step }}" mode="widthFix"/>
-  <view class="step-text">
+  <view class="step-text co lh21 size-36">
     I hide the roses behind me expectin to meet you at any time.
   </view>
 </view>
@@ -112,7 +116,7 @@
 <view class="tel-wrap mb100">
   <view class="tel-child">
   <button hover-class="none" bindtap="call" data-phone="{{ couple[0].number }}">
-    <view class="tel-icon-wrap tel-icon-wrap-man">
+    <view class="tel-icon-wrap cb">
       <image class="tel-icon-bg" src="../../images/border.png" mode="widthFix" />
       <image class="tel-icon" src="../../images/icon/phone-man.png" mode="widthFix" />
       新郎
@@ -122,7 +126,7 @@
   </view>
   <view class="tel-child">
     <button hover-class="none" bindtap="call" data-phone="{{ couple[1].number }}">
-      <view class="tel-icon-wrap tel-icon-wrap-girl">
+      <view class="tel-icon-wrap cp">
         <image class="tel-icon-bg" src="../../images/border.png" mode="widthFix" />
         <image class="tel-icon" src="../../images/icon/phone-girl.png" mode="widthFix" />
         新娘
@@ -147,10 +151,10 @@
 </view>
 
 <view class="under-exchange-wrap mb100">
-  <view class="cb">
+  <view class="cb size-26">
     You are back it with all the
   </view>
-  <view class="cb">
+  <view class="cb size-26">
     good things in this world.
   </view>
   <image class="invitation-image2" src="../../images/invitation.png" mode="widthFix"/>
@@ -190,7 +194,7 @@
       <view class="countdown-label">秒</view>
     </view>
   </view>
-  <view class="countdown-text">
+  <view class="countdown-text cp">
     I want to stay around you. Now and forever, let it be me.
   </view>
 </view>
@@ -337,7 +341,7 @@
 
 <view class="location">
     <view>
-        <view>Address/</view>
+        <view class="cb size-36">Address/</view>
         <view>{{ location.name }}</view>
         <view>{{ location.address }}</view>
     </view>
@@ -384,50 +388,23 @@
 </view>
 <view class="end-images-wrap mt152 mb252">
   <view class="end1">
-    <view class="end1-text co">
+    <view class="end1-text co size-36 lh21">
       The most beautiful thing in the world is that when I like you.you also like me.
     </view>
     <image src="{{cloudImages.end1}}" mode="widthFix"/>
   </view>
   <view class="end2">
     <image src="{{cloudImages.end2}}" mode="widthFix"/>
-    <image class="xi-image" src="../../images/xi.png" mode="widthFix"/>
+    <image class="xi-image3" src="../../images/xi.png" mode="widthFix"/>
   </view>
   <view class="end3">
-    <view class="end3-text cb">
+    <view class="end3-text cb size-36 lh21">
       Love is the dawn of marriage, marriage is the sunset of love.
     </view>
     <image src="{{cloudImages.end3}}" mode="widthFix"/>
   </view>
 </view>
-<!-- 
-<view class="tc lh21 mb100">
-    <image class="img-separate mb100" src="https://h5cdn.hunbei.com/editorCustomPic/2022-1-26-rx4ZZi3KdMErdNk4E2X3EHh3EiB3bPdY.gif?imageMogr2/auto-orient/thumbnail/864x27>" mode="aspectFit" />
-    <image class="img-full-width mb100" src="{{ imgs.end1 }}" mode="widthFix" />
-    <view class="tl">
-        <view class="tips">温馨tips：</view>
-        <view>请预留好{{ weddingTimeStr[4] }}这一天的行程</view>
-        <view>如果被事务牵绊或临时有变化</view>
-        <view class="mb58">请提前告知新郎/新娘</view>
-        <view>许久未见 ，甚是想念</view>
-        <view>我们，婚礼见</view>
-    </view>
-</view>
 
-<view class="tc lh21 mb152">
-    <image class="img-full-width mb100" src="{{ imgs.end2 }}" mode="widthFix" />
-    <view class="tr mb100">
-        <view>我把我的整个灵魂都给你</view>
-        <view>连同它的怪癖</view>
-        <view>耍小脾气，忽明忽暗</view>
-        <view>一千八百种坏毛病</view>
-        <view>它真讨厌</view>
-        <view class="mb58">只有一点好，爱你</view>
-        <view>/ 爱你就像爱生命 /</view>
-        <view>/ 王小波 /</view>
-    </view>
-    <image class="img-end" src="https://h5cdn.hunbei.com/editorCustomPic/2022-8-19-niYXMwfBrA5bCeRQSFnXRRKRmcSnmfEC.png?imageMogr2/auto-orient/thumbnail/519x264>/format/webp" mode="aspectFit" />
-</view> -->
 <view class="end-text-wrap tc lh21 mb152">
   <view>
     我不落世俗，我永远爱你
@@ -436,18 +413,18 @@
     我们与浪漫同归
   </view>
   <view>
-    爱没有定义，你在他舅在
+    爱没有定义，你在他就在
   </view>
   <view>
     ......
   </view>
-  <view class="co">
+  <view class="co end-eng">
     Love has no definition
   </view>
-  <view class="co">
+  <view class="co end-eng mb100">
     you are in it
   </view>
-  <view class="cb">
+  <view class="thanks cb size-36">
     Thanks
   </view>
 </view>
@@ -455,21 +432,21 @@
 <view wx:if="{{ showEggs }}" class="egg tc">
     <view class="egg-title">彩蛋<image src="../../images/icon/egg.png" mode="aspectFit" /></view>
     <view class="mb28">该小程序由新郎哥本人（也就是我了😎）独立完成开发，如有雷同，没错，我参考了婚贝上的一个模板，但是又不想付费，所以就干脆自己写一个，需要的小伙伴可以找我要源码哦😝</view>
-    <view class="mb28">最后是喜闻乐见的撒狗粮环节✿✿ヽ(°▽°)ノ✿，首先出场的是我们的求婚视频☺️</view>
+    <!-- <view class="mb28">最后是喜闻乐见的撒狗粮环节✿✿ヽ(°▽°)ノ✿，首先出场的是我们的求婚视频☺️</view> -->
 
     <!-- 如果要加视频号的话可以用我封装好的channel组件，小程序个人号也能使用视频号卡片样式，参数和官方提供的channel-video基本一致 -->
-    <view class="mb58">
+    <!-- <view class="mb58">
         <channel finder-user-name="sphnQSkTBRwbRTK" feed-id="export/UzFfAgtgekIEAQAAAAAAPvkpzoO6XwAAAAstQy6ubaLX4KHWvLEZgBPE8YMMHW0eXf-HzNPgMJoermBiWqs9f6R0EzJgYBR1" poster="https://res.wx.qq.com/t/fed_upload/3da3dcc4-0add-4fb7-981f-587b291c1c69/propose.jpg" nickname="Jamin"></channel>
     </view>
 
-    <view class="mb28">然后当然少不了我们在苗寨拍的艺术照啦哈哈哈哈😄</view>
+    <view class="mb28">然后当然少不了我们在苗寨拍的艺术照啦哈哈哈哈😄</view> -->
 
     <!-- 如果要加视频号的话可以用我封装好的channel组件，小程序个人号也能使用视频号卡片样式，参数和官方提供的channel-video基本一致 -->
-    <view class="mb58">
+    <!-- <view class="mb58">
         <channel finder-user-name="sphnQSkTBRwbRTK" feed-id="export/UzFfAgtgekIEAQAAAAAAQCYj8jTRuAAAAAstQy6ubaLX4KHWvLEZgBPEwYN4ax0BbeKGzNPgMJoI4A03G3e3pJIH4mc7mzaX" poster="https://res.wx.qq.com/t/fed_upload/afdf01f1-13a2-431c-97ce-5af931731df4/artistic.jpeg" nickname="Jamin"></channel>
-    </view>
+    </view> -->
 
-    <view class="mb28">好啦，狗粮撒到这里就差不多啦，剩下的我们留到婚礼上再呈现给大家吧，我们婚礼上见哦~💒👫🏻</view>
+    <!-- <view class="mb28">好啦，狗粮撒到这里就差不多啦，剩下的我们留到婚礼上再呈现给大家吧，我们婚礼上见哦~💒👫🏻</view> -->
     <view>未完，待续</view>
     <view>爱，我们一直在路上</view>
 </view>
