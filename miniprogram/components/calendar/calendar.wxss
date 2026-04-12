@@ -1,14 +1,21 @@
 .calendar {
     width: 576rpx;
-    border: 20rpx solid rgb(133, 22, 14);
-    margin: 0 auto 152rpx;
+    margin: 0 auto 40rpx;
     padding: 72rpx;
-    color: rgb(133, 22, 14);
     line-height: 1;
     box-sizing: border-box;
     position: relative;
     letter-spacing: 0;
     text-align: center;
+}
+
+.calendar-border {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
 }
 
 .calendar-year {
@@ -66,7 +73,6 @@
     display: block;
     width: 56rpx;
     height: 56rpx;
-    background-color: rgb(133, 22, 14);
     top: -6rpx;
     border-radius: 50%;
     z-index: 11;

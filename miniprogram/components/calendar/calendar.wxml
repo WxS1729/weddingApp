@@ -1,8 +1,9 @@
-<view class="calendar">
+<view class="calendar co">
+    <image class="calendar-border" src="/images/calendarBorder.png" mode="scaleToFill"/>
     <view class="calendar-year">{{ year }}</view>
     <view class="calendar-main">
         <view class="calendar-month-day">{{ month }} <text class="calendar-month-day-sep">/</text> {{ day }}</view>
-        <view class="calendar-line calendar-week">
+        <view class="calendar-line calendar-week co">
             <text class="calendar-item">日</text>
             <text class="calendar-item">一</text>
             <text class="calendar-item">二</text>
@@ -11,7 +12,7 @@
             <text class="calendar-item">五</text>
             <text class="calendar-item">六</text>
         </view>
-        <view class="calendar-line" wx:for="{{ list }}" wx:key="*this" wx:for-item="week">
+        <view class="calendar-line co" wx:for="{{ list }}" wx:key="*this" wx:for-item="week">
             <text class="calendar-item" wx:for="{{ week }}" wx:key="*this">
                 <block wx:if="{{ item === dayNumber }}">
                     <text class="calendar-current">{{ item }}</text>

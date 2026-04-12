@@ -77,7 +77,7 @@
   </view>
   <view class="weiAndsong-image">
     <view class="black-background-wrap">
-      <image class="black-background-image" src="{{ cloudImages.blackBackground }}" mode="widthFix"/>
+      <image class="black-background-image" src="{{ cloudImages.blackBackground2 }}" mode="widthFix"/>
     </view>
     <image class="weiAndsong-person-image"  src="{{ cloudImages.fuqiang }}" mode="widthFix"/>
     <view class="weiAndsong-end">
@@ -141,11 +141,61 @@
 </view>
 
 <view class="exchange-wrap mb100">
-  <image class="exchange-image" src="{{ cloudImages.exchange1 }}" mode="widthFix"/>
-  <image class="exchange-image" src="{{ cloudImages.exchange2 }}" mode="widthFix"/>
+  <image class="exchange-image exchange-image-1" style="opacity:{{ exchangeOpacity1 }}" src="{{ cloudImages.exchange1 }}" mode="widthFix"/>
+  <image class="exchange-image exchange-image-2" style="opacity:{{ exchangeOpacity2 }}" src="{{ cloudImages.exchange2 }}" mode="widthFix"/>
+  <image class="xi-image2" src="../../images/xi.png" mode="widthFix"/>
+</view>
+
+<view class="under-exchange-wrap mb100">
+  <view class="cb">
+    You are back it with all the
+  </view>
+  <view class="cb">
+    good things in this world.
+  </view>
+  <image class="invitation-image2" src="../../images/invitation.png" mode="widthFix"/>
+</view>
+
+<view class="count-down-wrap mb100">
+  <view class="wedding-info">/  婚礼信息</view>
+  <image class="black-background-image black-background-image-3" src="{{ cloudImages.blackBackground3 }}" mode="widthFix"/>
+  <image class="count-down-image" src="{{ cloudImages.countdown }}" mode="widthFix"/>
+  <view class="countdown-box">
+    <view class="countdown-item">
+      <view class="countdown-value-wrap">
+        <view class="countdown-digit {{ countdown.d0f ? 'flip-in' : '' }}">{{ countdown.d0 }}</view>
+        <view class="countdown-digit {{ countdown.d1f ? 'flip-in' : '' }}">{{ countdown.d1 }}</view>
+      </view>
+      <view class="countdown-label">天</view>
+    </view>
+    <view class="countdown-item">
+      <view class="countdown-value-wrap">
+        <view class="countdown-digit {{ countdown.h0f ? 'flip-in' : '' }}">{{ countdown.h0 }}</view>
+        <view class="countdown-digit {{ countdown.h1f ? 'flip-in' : '' }}">{{ countdown.h1 }}</view>
+      </view>
+      <view class="countdown-label">时</view>
+    </view>
+    <view class="countdown-item">
+      <view class="countdown-value-wrap">
+        <view class="countdown-digit {{ countdown.m0f ? 'flip-in' : '' }}">{{ countdown.m0 }}</view>
+        <view class="countdown-digit {{ countdown.m1f ? 'flip-in' : '' }}">{{ countdown.m1 }}</view>
+      </view>
+      <view class="countdown-label">分</view>
+    </view>
+    <view class="countdown-item">
+      <view class="countdown-value-wrap">
+        <view class="countdown-digit {{ countdown.s0f ? 'flip-in' : '' }}">{{ countdown.s0 }}</view>
+        <view class="countdown-digit {{ countdown.s1f ? 'flip-in' : '' }}">{{ countdown.s1 }}</view>
+      </view>
+      <view class="countdown-label">秒</view>
+    </view>
+  </view>
+  <view class="countdown-text">
+    I want to stay around you. Now and forever, let it be me.
+  </view>
 </view>
 <!-- <text class="test-text">We are family</text> -->
-<view class="tc lh21 mb100">
+<!-- <view class="tc lh21 mb100">
     <image class="img-introduce" src="https://h5cdn.hunbei.com/editorCustomPic/2022-8-22-WNhBXi3ty4fw7dwFBxSZneDKYtz754ya.png?imageMogr2/auto-orient/thumbnail/542.00x58.84>" mode="aspectFit" />
     <view class="moon">
         <image class="img-moon" src="https://h5cdn.hunbei.com/editorCustomPic/2022-2-16-6xEP56tzDiPX53f4WZbAYR3pmwAZB7M7.png?imageMogr2/auto-orient/thumbnail/310.00x465.00>" mode="aspectFit" />
@@ -241,9 +291,9 @@
     <view>家人闲坐，灯火可亲</view>
     <view>世上最有趣的事</view>
     <view>就是和最爱的人一起虚度光阴</view>
-</view>
+</view> -->
 
-<view class="tc lh21 mb100">
+<!-- <view class="tc lh21 mb100">
     <swiper class="swiper-outdoor" autoplay circular interval="2500" easing-function="linear" indicator-dots>
         <swiper-item wx:for="{{ imgs.swiper2 }}" wx:key="*this">
             <image class="img-full-width" src="{{ item }}" mode="widthFix" />
@@ -277,37 +327,30 @@
     <view>携同我们的父母</view>
     <view>邀请您出席我们的婚礼仪式</view>
     <view>见证和分享我们的幸福时刻</view>
-</view>
+</view> -->
 
 <view class="tc lh21 mb100">
-    <image class="img-separate mb100" src="https://h5cdn.hunbei.com/editorCustomPic/2022-1-26-rx4ZZi3KdMErdNk4E2X3EHh3EiB3bPdY.gif?imageMogr2/auto-orient/thumbnail/864x27>" mode="aspectFit" />
-    <image class="img-calendar-title mb100" src="https://h5cdn.hunbei.com/editorCustomPic/2022-8-22-wybCS45p5fFnRhTpQB5x48WhY4bjEDj8.png?imageMogr2/auto-orient/thumbnail/511x117>/format/webp" mode="aspectFit" />
     <calendar id="calendar" date="{{ weddingTime }}"></calendar>
-    <view>{{ weddingTimeStr[2] }}</view>
-    <view>{{ weddingTimeStr[3] }}</view>
+    <view class="wedding-time">{{ weddingTimeStr[2] }}</view>
+    <view class="wedding-time">{{ weddingTimeStr[3] }}</view>
 </view>
 
-<view class="location mb100">
+<view class="location">
     <view>
+        <view>Address/</view>
         <view>{{ location.name }}</view>
         <view>{{ location.address }}</view>
     </view>
     <map longitude="{{ location.longitude }}" latitude="{{ location.latitude }}" enable-zoom="{{ false }}" enable-scroll="{{ false }}" markers="{{ location.markers }}" />
     <view class="location-mask" bindtap="openLocation"></view>
-
-    <!-- 仅用于获取定位信息，获取后会打印到控制台并写入到粘贴板，正式发布时记得注释起来 -->
-    <button type="primary" size="mini" hover-class="none" bindtap="chooseLocation">选择位置并获取定位信息</button>
 </view>
 
-<view class="phone mb100">
-    <view class="phone-item" wx:for="{{ couple }}" wx:key="name">
-        <image class="couple-cover" src="{{ item.image }}" mode="aspectFit" />
-        <button hover-class="none" bindtap="call" data-phone="{{ item.number }}"><image src="../../images/icon/phone.png" mode="aspectFit" />联系{{ item.alias }}</button>
-    </view>
-</view>
+<image class="form-background" src="{{cloudImages.formBackground}}" mode="widthFix"/>
 
 <form wx:if="{{ magic }}" bindsubmit="submit">
-    <view class="form tc mb100">
+    <view class="form tc mb100 mt152">
+        <image class="form-border" src="/images/calendarBorder.png" mode="scaleToFill"/>
+        <view class="rsvp co">RSVP</view>
         <view>
             <text>*</text>
             <input type="text" placeholder="姓名" name="name" value="{{ form.name }}" placeholder-class="form-input-placeholder" maxlength="10" />
@@ -317,12 +360,47 @@
             <input type="number" placeholder="出席人数" name="num" value="{{ form.num }}" placeholder-class="form-input-placeholder" maxlength="2" />
         </view>
         <view>
-            <textarea type="text" placeholder="祝福语，可以上墙哦~" name="greeting" value="{{ form.greeting }}" placeholder-class="form-input-placeholder" maxlength="140" disable-default-padding />
+            <textarea type="text" placeholder="祝福语~" name="greeting" value="{{ form.greeting }}" placeholder-class="form-input-placeholder" maxlength="140" disable-default-padding />
         </view>
         <button hover-class="none" form-type="submit" open-type="getUserInfo">{{ name ? '更新' : '提交' }}</button>
     </view>
 </form>
-
+<view class="tc lh21 mt152">
+  <view>
+    爱上你这件事太美妙了
+  </view>
+  <view>
+    三缄其口，却又四海生风
+  </view>
+  <view>
+    有亏盈，有枯荣
+  </view>
+  <view>
+    你就像一缕月光撒在了我的心上
+  </view>
+  <view>
+    映亮了夏夜，送来了清秋
+  </view>
+</view>
+<view class="end-images-wrap mt152 mb252">
+  <view class="end1">
+    <view class="end1-text co">
+      The most beautiful thing in the world is that when I like you.you also like me.
+    </view>
+    <image src="{{cloudImages.end1}}" mode="widthFix"/>
+  </view>
+  <view class="end2">
+    <image src="{{cloudImages.end2}}" mode="widthFix"/>
+    <image class="xi-image" src="../../images/xi.png" mode="widthFix"/>
+  </view>
+  <view class="end3">
+    <view class="end3-text cb">
+      Love is the dawn of marriage, marriage is the sunset of love.
+    </view>
+    <image src="{{cloudImages.end3}}" mode="widthFix"/>
+  </view>
+</view>
+<!-- 
 <view class="tc lh21 mb100">
     <image class="img-separate mb100" src="https://h5cdn.hunbei.com/editorCustomPic/2022-1-26-rx4ZZi3KdMErdNk4E2X3EHh3EiB3bPdY.gif?imageMogr2/auto-orient/thumbnail/864x27>" mode="aspectFit" />
     <image class="img-full-width mb100" src="{{ imgs.end1 }}" mode="widthFix" />
@@ -349,8 +427,30 @@
         <view>/ 王小波 /</view>
     </view>
     <image class="img-end" src="https://h5cdn.hunbei.com/editorCustomPic/2022-8-19-niYXMwfBrA5bCeRQSFnXRRKRmcSnmfEC.png?imageMogr2/auto-orient/thumbnail/519x264>/format/webp" mode="aspectFit" />
+</view> -->
+<view class="end-text-wrap tc lh21 mb152">
+  <view>
+    我不落世俗，我永远爱你
+  </view>
+  <view>
+    我们与浪漫同归
+  </view>
+  <view>
+    爱没有定义，你在他舅在
+  </view>
+  <view>
+    ......
+  </view>
+  <view class="co">
+    Love has no definition
+  </view>
+  <view class="co">
+    you are in it
+  </view>
+  <view class="cb">
+    Thanks
+  </view>
 </view>
-
 <!-- 彩蛋板块视乎个人情况决定要不要 -->
 <view wx:if="{{ showEggs }}" class="egg tc">
     <view class="egg-title">彩蛋<image src="../../images/icon/egg.png" mode="aspectFit" /></view>

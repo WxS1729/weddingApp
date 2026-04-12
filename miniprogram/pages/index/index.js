@@ -13,6 +13,8 @@ Page({
         ...APP.globalData,
         isManager: false, // 当前用户是否为管理员
         musicIsPaused: false, // 是否暂停背景音乐
+        exchangeOpacity1: 1,
+        exchangeOpacity2: 0,
         activeIdx: isRemoved ? 0 : -1, // 祝福语轮播用，当前显示的祝福语索引值
         form: { // 表单信息
             name: '',
@@ -20,6 +22,10 @@ Page({
             greeting: ''
         },
         weddingTimeStr: [], // 格式化的婚礼日期列表
+        countdown: {
+            d0: '0', d1: '0', h0: '0', h1: '0', m0: '0', m1: '0', s0: '0', s1: '0',
+            d0f: false, d1f: false, h0f: false, h1f: false, m0f: false, m1f: false, s0f: false, s1f: false
+        },
 
         // 云存储图片（需要动态获取HTTPS链接）
         cloudImages: {
@@ -130,6 +136,25 @@ Page({
         }
     },
 
+    // 监听页面滚动，控制交换图片的不透明度
+    onPageScroll(e) {
+        if (!this._exchangeTop) return
+        const rectTop = this._exchangeTop - e.scrollTop
+
+        let o1, o2
+        if (rectTop >= 60) {
+            o1 = 1; o2 = 0
+        } else if (rectTop <= -215) {
+            o1 = 0; o2 = 1
+        } else {
+            const progress = (60 - rectTop) / 275
+            o1 = 1 - progress
+            o2 = progress
+        }
+
+        this.setData({ exchangeOpacity1: o1, exchangeOpacity2: o2 })
+    },
+
     // 小程序加载时，拉取表单信息并填充，以及格式化各种婚礼时间
     onLoad() {
         this.timer = null
@@ -171,6 +196,66 @@ Page({
                 this.lunisolarDate.format('YYYY年MM月DD号')
             ]
         })
+
+        // 启动婚礼倒计时
+        this.startCountdown()
+    },
+
+    // 婚礼倒计时
+    startCountdown() {
+        const updateCountdown = () => {
+            const target = new Date('2026-05-24T12:00:00').getTime()
+            const now = Date.now()
+            const diff = target - now
+
+            if (diff <= 0) {
+                this.setData({ countdown: { d0:'0',d1:'0',h0:'0',h1:'0',m0:'0',m1:'0',s0:'0',s1:'0', d0f:false,d1f:false,h0f:false,h1f:false,m0f:false,m1f:false,s0f:false,s1f:false } })
+                if (this.countdownTimer) {
+                    clearInterval(this.countdownTimer)
+                    this.countdownTimer = null
+                }
+                return
+            }
+
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24))
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60))
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000)
+
+            const nd = String(days).padStart(2, '0')
+            const nh = String(hours).padStart(2, '0')
+            const nm = String(minutes).padStart(2, '0')
+            const ns = String(seconds).padStart(2, '0')
+
+            const old = this.data.countdown
+            const d0f = old.d0 !== nd[0]
+            const d1f = old.d1 !== nd[1]
+            const h0f = old.h0 !== nh[0]
+            const h1f = old.h1 !== nh[1]
+            const m0f = old.m0 !== nm[0]
+            const m1f = old.m1 !== nm[1]
+            const s0f = old.s0 !== ns[0]
+            const s1f = old.s1 !== ns[1]
+
+            this.setData({
+                countdown: { d0:nd[0],d1:nd[1],h0:nh[0],h1:nh[1],m0:nm[0],m1:nm[1],s0:ns[0],s1:ns[1], d0f,d1f,h0f,h1f,m0f,m1f,s0f,s1f }
+            })
+
+            const anyFlip = d0f||d1f||h0f||h1f||m0f||m1f||s0f||s1f
+            if (anyFlip) {
+                setTimeout(() => {
+                    this.setData({
+                        'countdown.d0f': false, 'countdown.d1f': false,
+                        'countdown.h0f': false, 'countdown.h1f': false,
+                        'countdown.m0f': false, 'countdown.m1f': false,
+                        'countdown.s0f': false, 'countdown.s1f': false
+                    })
+                }, 400)
+            }
+        }
+
+        updateCountdown()
+        this.countdownTimer = setInterval(updateCountdown, 1000)
     },
 
     // 小程序卸载时，取消自动拉取祝福语定时器，销毁背景音乐
@@ -178,6 +263,11 @@ Page({
         if (this.timer !== null) {
             clearInterval(this.timer)
             this.timer = null
+        }
+
+        if (this.countdownTimer !== null) {
+            clearInterval(this.countdownTimer)
+            this.countdownTimer = null
         }
 
         if (this.music !== null) {
@@ -193,6 +283,11 @@ Page({
 
             this.timer === null && (this.timer = setInterval(() => this.getGreetings(), 20000));
         }
+
+        // 恢复倒计时
+        if (!this.countdownTimer) {
+            this.startCountdown()
+        }
     },
 
     // 小程序不可见时，取消自动拉取祝福语定时器
@@ -201,10 +296,23 @@ Page({
             clearInterval(this.timer)
             this.timer = null
         }
+
+        if (this.countdownTimer !== null) {
+            clearInterval(this.countdownTimer)
+            this.countdownTimer = null
+        }
     },
 
     // 小程序可用时，初始化背景音乐并自动播放
     onReady() {
+        // 缓存 exchange-wrap 的初始位置
+        const query = wx.createSelectorQuery().in(this)
+        query.select('.exchange-wrap').boundingClientRect()
+        query.exec(res => {
+            if (res[0]) {
+                this._exchangeTop = res[0].top
+            }
+        })
         if (this.music === null) {
             this.music = wx.createInnerAudioContext({
                 useWebAudioImplement: false
@@ -269,26 +377,7 @@ openLocation() {
             address
         })
     },
-
-    // 仅用于获取定位信息，获取后会打印到控制台并写入到粘贴板，正式发布时记得注释起来
-    chooseLocation() {
-        wx.chooseLocation({
-            success(res) {
-                wx.setClipboardData({
-                    data: JSON.stringify(res),
-                    success() {
-                        wx.showToast({
-                            title: '已写入剪贴板'
-                        })
-                        console.log(res)
-                    }
-                })
-            }
-        })
-    },
-
     // 呼叫
-
 call(e) {
         wx.makePhoneCall({
             phoneNumber: e.currentTarget.dataset.phone
@@ -434,12 +523,18 @@ call(e) {
                 'cloud://cloud1-6gcoidmn8681ebe1.636c-cloud1-6gcoidmn8681ebe1-1405350599/images/yjjx1.png',
                 'cloud://cloud1-6gcoidmn8681ebe1.636c-cloud1-6gcoidmn8681ebe1-1405350599/images/yjjx2.png',
                 'cloud://cloud1-6gcoidmn8681ebe1.636c-cloud1-6gcoidmn8681ebe1-1405350599/images/yellowAndPurple.png',
-                'cloud://cloud1-6gcoidmn8681ebe1.636c-cloud1-6gcoidmn8681ebe1-1405350599/images/blackBackground.png',
+                'cloud://cloud1-6gcoidmn8681ebe1.636c-cloud1-6gcoidmn8681ebe1-1405350599/images/blackBackground2.png',
                 'cloud://cloud1-6gcoidmn8681ebe1.636c-cloud1-6gcoidmn8681ebe1-1405350599/images/fuqiang.png',
                 'cloud://cloud1-6gcoidmn8681ebe1.636c-cloud1-6gcoidmn8681ebe1-1405350599/images/tel_man.png',
                 'cloud://cloud1-6gcoidmn8681ebe1.636c-cloud1-6gcoidmn8681ebe1-1405350599/images/tel_girl.png',
                 'cloud://cloud1-6gcoidmn8681ebe1.636c-cloud1-6gcoidmn8681ebe1-1405350599/images/exchange1.jpg',
-                'cloud://cloud1-6gcoidmn8681ebe1.636c-cloud1-6gcoidmn8681ebe1-1405350599/images/exchange2.jpg'
+                'cloud://cloud1-6gcoidmn8681ebe1.636c-cloud1-6gcoidmn8681ebe1-1405350599/images/exchange2.jpg',
+                'cloud://cloud1-6gcoidmn8681ebe1.636c-cloud1-6gcoidmn8681ebe1-1405350599/images/blackBackground3.png',
+                'cloud://cloud1-6gcoidmn8681ebe1.636c-cloud1-6gcoidmn8681ebe1-1405350599/images/countdown.png',
+                'cloud://cloud1-6gcoidmn8681ebe1.636c-cloud1-6gcoidmn8681ebe1-1405350599/images/formBackground.png',
+                'cloud://cloud1-6gcoidmn8681ebe1.636c-cloud1-6gcoidmn8681ebe1-1405350599/images/end1.png',
+                'cloud://cloud1-6gcoidmn8681ebe1.636c-cloud1-6gcoidmn8681ebe1-1405350599/images/end2.png',
+                'cloud://cloud1-6gcoidmn8681ebe1.636c-cloud1-6gcoidmn8681ebe1-1405350599/images/end3.png'
             ],
             success: res => {
                 const fileList = res.fileList
@@ -452,12 +547,18 @@ call(e) {
                     yjjx1: fileList[5].tempFileURL,
                     yjjx2: fileList[6].tempFileURL,
                     yellowAndPurple: fileList[7].tempFileURL,
-                    blackBackground: fileList[8].tempFileURL,
+                    blackBackground2: fileList[8].tempFileURL,
                     fuqiang: fileList[9].tempFileURL,
                     telMan: fileList[10].tempFileURL,
                     telGirl: fileList[11].tempFileURL,
                     exchange1: fileList[12].tempFileURL,
                     exchange2: fileList[13].tempFileURL,
+                    blackBackground3: fileList[14].tempFileURL,
+                    countdown: fileList[15].tempFileURL,
+                    formBackground: fileList[16].tempFileURL,
+                    end1: fileList[17].tempFileURL,
+                    end2: fileList[18].tempFileURL,
+                    end3: fileList[19].tempFileURL,
                 }
                 this.setData({ cloudImages })
             },

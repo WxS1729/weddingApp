@@ -40,6 +40,13 @@
     margin-bottom: 152rpx;
 }
 
+.mb252 {
+  margin-bottom: 252rpx;
+}
+.mt152 {
+  margin-top: 152rpx;
+}
+
 /* 内边距 */
 
 .pr40 {
@@ -55,6 +62,15 @@
 
 .img-full-width {
     width: 100%;
+}
+
+/* 文字颜色 */
+.cb{
+  color: rgb(88, 197, 253);
+}
+
+.co{
+  color: rgb(255, 195, 104);
 }
 
 /* 组件 */

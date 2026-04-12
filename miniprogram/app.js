@@ -13,7 +13,7 @@ App({
         magic: true, // 手动党（方便预览完整功能，我先设为true）
 
         // 婚礼日期时间
-        weddingTime: '2026-05-24',
+        weddingTime: '2026-05-24 12:00',
 
         // 新郎新娘信息
         couple: [{
