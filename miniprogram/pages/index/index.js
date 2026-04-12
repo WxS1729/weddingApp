@@ -56,9 +56,9 @@ Page({
 
         // 背景音乐（默认用陈奕迅的《I DO》，想换的话自己去找音频资源，我是在「婚贝」上找的）
         music: {
-            src: 'https://amp3.hunbei.com/mp3/IDo_ChenYiXun.mp3', // 音频资源链接
-            name: 'I DO', // 歌名
-            singer: '陈奕迅' // 歌手名
+            src: 'cloud://cloud1-6gcoidmn8681ebe1.636c-cloud1-6gcoidmn8681ebe1-1405350599/audio/bgm.mp3', // 音频资源链接
+            name: '海鸥', // 歌名
+            singer: '逃跑计划' // 歌手名
         },
 
         // 酒店信息（通过页面上的「选择位置并获取定位信息」按钮可以获取定位信息，发布前记得把按钮注释起来）

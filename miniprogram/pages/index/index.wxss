@@ -105,7 +105,7 @@
   width: 270rpx;
   height: 270rpx;
   position: absolute;
-  bottom: -17%;
+  bottom: -16%;
   right: 10%;
   animation: rotate 3s linear infinite;
   z-index: -1;

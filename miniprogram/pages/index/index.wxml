@@ -23,7 +23,7 @@
   </view>
   <view class="music-right">
     <view class="music-info">
-        <view class="music-title">{{ music.name }}</view>
+        <view class="music-singer">{{ music.name }}</view>
         <view class="music-singer">{{ music.singer }}</view>
     </view>
     <view class="music-progress-bar">
