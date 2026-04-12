@@ -39,15 +39,6 @@ App({
 
     // 小程序启动时，初始化云开发环境
     onLaunch() {
-        // 加载自定义字体
-        wx.loadFontFace({
-            family: 'Caveat',
-            source: 'url("https://fonts.gstatic.com/s/caveat/v18/WnznHAc5bAfYB2QRah7pcpNvOx-pjfJ9SIKjYBxPigs.woff2")',
-            global: true,
-            success: () => console.log('Caveat 字体加载成功'),
-            fail: (err) => console.error('Caveat 字体加载失败', err)
-        })
-
         !this.globalData.isRemoved && wx.cloud.init({
             env: 'cloud1-6gcoidmn8681ebe1', // 云开发环境ID，在云开发控制台里可以查看
             traceUser: true
