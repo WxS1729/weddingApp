@@ -480,6 +480,7 @@
 .tel-icon{
   width: 50rpx;
   margin-right: 20rpx;
+  animation: telPulse 2.5s ease-in-out infinite;
 }
 
 .end-text{

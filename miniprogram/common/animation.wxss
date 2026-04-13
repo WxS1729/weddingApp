@@ -62,3 +62,36 @@
         transform: translateX(0);
     }
 }
+
+@keyframes telPulse {
+    0% {
+        transform: scale(1) rotate(0deg);
+    }
+    12% {
+        transform: scale(1.35) rotate(10deg);
+    }
+    19% {
+        transform: scale(1.35) rotate(-10deg);
+    }
+    26% {
+        transform: scale(1.35) rotate(10deg);
+    }
+    33% {
+        transform: scale(1.35) rotate(-10deg);
+    }
+    40% {
+        transform: scale(1.35) rotate(8deg);
+    }
+    47% {
+        transform: scale(1.35) rotate(-8deg);
+    }
+    54% {
+        transform: scale(1.35) rotate(0deg);
+    }
+    64% {
+        transform: scale(1) rotate(0deg);
+    }
+    100% {
+        transform: scale(1) rotate(0deg);
+    }
+}
