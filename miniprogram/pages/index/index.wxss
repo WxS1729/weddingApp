@@ -1,15 +1,7 @@
 @import '../../common/base.wxss';
 @import '../../common/animation.wxss';
 
-/* 引入本地手写字体 - Caveat */
-@font-face {
-    font-family: 'Caveat';
-    src: url('../../fonts/caveat.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-
-/* 手写字体类 */
+/* 手写字体类 - Caveat 字体通过 wx.loadFontFace 从云存储加载 */
 .handwriting {
     font-family: 'Caveat' !important;
 }
@@ -262,8 +254,7 @@
 
 .weiAndSong-title{
   font-size: 36rpx;
-  text-decoration: underline;
-  font-style: italic;
+  margin: 30rpx 0;
 }
 
 .xi-image{
@@ -299,7 +290,7 @@
 
 .after-invitation{
   border-left: 3rpx solid #fff;
-  height: 300rpx;
+  height: 780rpx;
   position: relative;
   left: 20%;
   padding: 30rpx;
@@ -1059,7 +1050,7 @@
 }
 
 .end-text-wrap{
-  height: 550rpx;
+  height: 400rpx;
 }
 
 .end-eng{
@@ -1070,13 +1061,46 @@
   font-style: italic;
 }
 
-.tips {
-    font-size: 32rpx;
-    line-height: 1;
-    padding: 10rpx;
-    background-color: #999999;
-    display: inline-block;
-    margin-bottom: 40rpx;
+.tips{
+  padding: 30rpx;
+  font-size: 28rpx;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.tips-content{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10rpx;
+}
+
+.tips-content-text{
+  width: 560rpx;
+}
+
+.tips-dot{
+  width: 20rpx;
+  height: 20rpx;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-right: 16rpx;
+  margin-top: 6rpx;
+}
+
+.tips-dot-blue{
+  background-color: rgb(88, 197, 253);
+}
+
+.tips-dot-pink{
+  background-color: rgb(255, 54, 141);
+}
+
+.tips-content-end{
+  width: 600rpx;
+  text-align: center;
 }
 
 .img-end {
