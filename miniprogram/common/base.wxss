@@ -82,7 +82,7 @@
 }
 
 .size-36{
-  font-size: 36rpx;
+  font-size: 42rpx;
 }
 /* 组件 */
 swiper {

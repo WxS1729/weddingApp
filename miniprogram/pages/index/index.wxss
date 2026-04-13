@@ -1,6 +1,19 @@
 @import '../../common/base.wxss';
 @import '../../common/animation.wxss';
 
+/* 引入本地手写字体 - Caveat */
+@font-face {
+    font-family: 'Caveat';
+    src: url('../../fonts/caveat.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 手写字体类 */
+.handwriting {
+    font-family: 'Caveat' !important;
+}
+
 .title {
     position: relative;
     width: 100%;
@@ -82,6 +95,7 @@
 
 .cover-wrap {
     position: relative;
+    top: 80rpx;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -411,8 +425,7 @@
   position: absolute;
   bottom: -6%;
   right: -20rpx;
-  width: 500rpx;
-  font-size: 36rpx;
+  width: 400rpx;
 }
 
 .step-wrap{

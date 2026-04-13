@@ -4,7 +4,7 @@
 
 <view class="title">
     <view class="title-text">
-      <text class="title-left">WEDDING\nDAY</text>
+      <text class="title-left handwriting">WEDDING\nDAY</text>
       <text class="title-right">5\n24</text>
     </view>
     <image class="top-background" src="{{ cloudImages.topBackground }}"  mode="widthFix"/>
@@ -13,7 +13,7 @@
 </view>
 
 <view class="cover-wrap lh21">
-    <text class="lh15 invitation-text">当收到这封请柬的时候\n我们的婚礼已经在倒计时啦~\n\n非常荣幸能与您分享我们的爱情\n诚邀您参加我们的婚礼\n\n以前觉得婚礼是一则官方公告\n现在才明白\n这是一场为数不多的相聚</text>
+    <text class="lh15 invitation-text">当收到这封请柬的时候\n证明我们找到了可以共度一生的伴侣\n\n我们希望能以一种郑重的方式\n将他/她 介绍给你</text>
 </view>
 
 <image class="img-vinyl" src="{{ cloudImages.vinyl }}" mode="aspectFit" />
@@ -47,7 +47,7 @@
   <image class="yellowAndPurple-image" src="{{ cloudImages.yellowAndPurple }}" mode="widthFix" />
   <image class="flat pink-flat" src="../../images/pinkFlat.png" mode="widthFix"/>
   <image class="flat blue-flat" src="../../images/blueFlat.png" mode="widthFix"/>
-  <view class="cp love-letter1">As the clouds and mist dissipate, I loveyou and everyone knows it.</view>
+  <view class="cp love-letter1 handwriting size-36">As the clouds and mist dissipate, I loveyou and everyone knows it.</view>
 </view>
 
 <view class="after-invitation mb100 lh15">
@@ -73,10 +73,10 @@
   <text class="lh21 tc">
     你不是我权衡利弊后的选择\n而是我怦然心动后明知不可为而为之的选择
   </text>
-  <view class="co size-36">
+  <view class="co size-36 handwriting">
     Around the galaxy there are no
   </view>
-  <view class="co size-36">
+  <view class="co size-36 handwriting">
     brighter stars than you
   </view>
   <view class="weiAndsong-image">
@@ -85,7 +85,7 @@
     </view>
     <image class="weiAndsong-person-image"  src="{{ cloudImages.fuqiang }}" mode="widthFix"/>
     <view class="weiAndsong-end">
-      <view class="weiAndsong-end-text cb size-36 lh21">
+      <view class="weiAndsong-end-text cb size-36 lh21 handwriting">
         "There is nothing I want more for myself than a future with you."
       </view>
     </view>
@@ -108,7 +108,7 @@
 <view class="step-wrap mb152">
   <image class="step-image-text" src="../../images/step.png" mode="widthFix"/>
   <image class="step-image-person" src="{{ cloudImages.step }}" mode="widthFix"/>
-  <view class="step-text co lh21 size-36">
+  <view class="step-text co lh21 size-36 handwriting">
     I hide the roses behind me expectin to meet you at any time.
   </view>
 </view>
@@ -151,10 +151,10 @@
 </view>
 
 <view class="under-exchange-wrap mb100">
-  <view class="cb size-26">
+  <view class="cb size-26 handwriting">
     You are back it with all the
   </view>
-  <view class="cb size-26">
+  <view class="cb size-26 handwriting">
     good things in this world.
   </view>
   <image class="invitation-image2" src="../../images/invitation.png" mode="widthFix"/>
@@ -194,7 +194,7 @@
       <view class="countdown-label">秒</view>
     </view>
   </view>
-  <view class="countdown-text cp">
+  <view class="countdown-text cp handwriting">
     I want to stay around you. Now and forever, let it be me.
   </view>
 </view>
@@ -341,7 +341,7 @@
 
 <view class="location">
     <view>
-        <view class="cb size-36">Address/</view>
+        <view class="cb size-36 handwriting">Address/</view>
         <view>{{ location.name }}</view>
         <view>{{ location.address }}</view>
     </view>
@@ -354,7 +354,7 @@
 <form wx:if="{{ magic }}" bindsubmit="submit">
     <view class="form tc mb100 mt152">
         <image class="form-border" src="/images/calendarBorder.png" mode="scaleToFill"/>
-        <view class="rsvp co">RSVP</view>
+        <view class="rsvp co handwriting">RSVP</view>
         <view>
             <text>*</text>
             <input type="text" placeholder="姓名" name="name" value="{{ form.name }}" placeholder-class="form-input-placeholder" maxlength="10" />
@@ -388,7 +388,7 @@
 </view>
 <view class="end-images-wrap mt152 mb252">
   <view class="end1">
-    <view class="end1-text co size-36 lh21">
+    <view class="end1-text co size-36 lh21 handwriting">
       The most beautiful thing in the world is that when I like you.you also like me.
     </view>
     <image src="{{cloudImages.end1}}" mode="widthFix"/>
@@ -398,7 +398,7 @@
     <image class="xi-image3" src="../../images/xi.png" mode="widthFix"/>
   </view>
   <view class="end3">
-    <view class="end3-text cb size-36 lh21">
+    <view class="end3-text cb size-36 lh21 handwriting">
       Love is the dawn of marriage, marriage is the sunset of love.
     </view>
     <image src="{{cloudImages.end3}}" mode="widthFix"/>
@@ -418,13 +418,13 @@
   <view>
     ......
   </view>
-  <view class="co end-eng">
+  <view class="co end-eng handwriting">
     Love has no definition
   </view>
-  <view class="co end-eng mb100">
+  <view class="co end-eng mb100 handwriting">
     you are in it
   </view>
-  <view class="thanks cb size-36">
+  <view class="thanks cb size-36 handwriting">
     Thanks
   </view>
 </view>

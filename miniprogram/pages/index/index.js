@@ -162,6 +162,18 @@ Page({
         this.music = null
         this.isSubmit = false
 
+        // 加载本地手写字体 Caveat
+        wx.loadFontFace({
+            family: 'Caveat',
+            source: 'url("../../fonts/caveat.ttf")',
+            success: () => {
+                console.log('Caveat 字体加载成功')
+            },
+            fail: (err) => {
+                console.error('字体加载失败', err)
+            }
+        })
+
         // 获取云存储图片的HTTPS链接
         this.loadCloudImages()
 
