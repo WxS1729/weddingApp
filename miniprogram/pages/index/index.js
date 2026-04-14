@@ -33,6 +33,22 @@ Page({
             topBackground: '',
             vinyl: '',
             music: '',
+            step: '',
+            yjjx1: '',
+            yjjx2: '',
+            yellowAndPurple: '',
+            blackBackground2: '',
+            fuqiang: '',
+            telMan: '',
+            telGirl: '',
+            exchange1: '',
+            exchange2: '',
+            blackBackground3: '',
+            countdown: '',
+            formBackground: '',
+            end1: '',
+            end2: '',
+            end3: ''
         },
 
         // 以上变量都不用动，以下变量是需要手动修改的
@@ -162,18 +178,6 @@ Page({
         this.music = null
         this.isSubmit = false
 
-        // 加载本地手写字体 Caveat
-        wx.loadFontFace({
-            family: 'Caveat',
-            source: 'url("../../fonts/caveat.ttf")',
-            success: () => {
-                console.log('Caveat 字体加载成功')
-            },
-            fail: (err) => {
-                console.error('字体加载失败', err)
-            }
-        })
-
         // 获取云存储图片的HTTPS链接
         this.loadCloudImages()
 
@@ -195,6 +199,9 @@ Page({
                             }
                         })
                     }
+                },
+                fail: err => {
+                    console.error('获取表单信息失败', err)
                 }
             })
         }
@@ -310,6 +317,14 @@ Page({
             this.timer = null
         }
 
+        if (this.countdownTimer !== null) {
+            clearInterval(this.countdownTimer)
+            this.countdownTimer = null
+        }
+    },
+
+    // 停止倒计时（供外部调用）
+    stopCountdown() {
         if (this.countdownTimer !== null) {
             clearInterval(this.countdownTimer)
             this.countdownTimer = null
