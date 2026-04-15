@@ -81,6 +81,11 @@
   font-size: 26rpx;
 }
 
+.size-36{
+  font-size: 36rpx;
+}
+
+
 .size-45{
   font-size: 45rpx;
 }

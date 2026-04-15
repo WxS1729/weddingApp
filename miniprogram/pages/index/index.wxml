@@ -45,7 +45,7 @@
   <image class="yellowAndPurple-image" src="{{ cloudImages.yellowAndPurple }}" mode="widthFix" />
   <image class="flat pink-flat" src="../../images/pinkFlat.png" mode="widthFix"/>
   <image class="flat blue-flat" src="../../images/blueFlat.png" mode="widthFix"/>
-  <view class="cp love-letter1 handwriting size-45">As the clouds and mist dissipate, I loveyou and everyone knows it.</view>
+  <text class="cp love-letter1 handwriting size-45">Stay close to me.\nGrow old along with me.\nLove never fails.</text>
 </view>
 
 <view class="after-invitation mb100 lh15">
@@ -77,10 +77,10 @@
     Wei & Song
   </view>
   <view class="co size-45 handwriting">
-    Around the galaxy there are no
+    In the flow of time
   </view>
   <view class="co size-45 handwriting">
-    brighter stars than you
+    love is the only eternity
   </view>
   <view class="weiAndsong-image">
     <view class="black-background-wrap">
@@ -89,7 +89,7 @@
     <image class="weiAndsong-person-image"  src="{{ cloudImages.fuqiang }}" mode="widthFix"/>
     <view class="weiAndsong-end">
       <view class="weiAndsong-end-text cb size-45 lh21 handwriting">
-        "There is nothing I want more for myself than a future with you."
+        "Love is the resonance of our heartbeats."
       </view>
     </view>
   </view>
@@ -111,8 +111,8 @@
 <view class="step-wrap mb152">
   <image class="step-image-text" src="../../images/step.png" mode="widthFix"/>
   <image class="step-image-person" src="{{ cloudImages.step }}" mode="widthFix"/>
-  <view class="step-text co lh21 size-45 handwriting">
-    I hide the roses behind me expectin to meet you at any time.
+  <view class="step-text cb lh21 size-45 handwriting">
+    You are my iridescent.
   </view>
 </view>
 
@@ -158,11 +158,11 @@
 </view>
 
 <view class="under-exchange-wrap mb100">
-  <view class="cb size-26 handwriting">
-    You are back it with all the
+  <view class="cb size-36 handwriting">
+    For nothing this wide universe I call
   </view>
-  <view class="cb size-26 handwriting">
-    good things in this world.
+  <view class="cb size-36 handwriting">
+    Save thou, my rose; in it thou art my all
   </view>
   <image class="invitation-image2" src="../../images/invitation.png" mode="widthFix"/>
 </view>
@@ -201,9 +201,9 @@
       <view class="countdown-label">秒</view>
     </view>
   </view>
-  <view class="countdown-text cp handwriting">
-    I want to stay around you. Now and forever, let it be me.
-  </view>
+  <text class="countdown-text cp handwriting size-45">
+    Nous allons vivre, enfin,\nce qui s'appelle vivre:\naimer, créer,\nflamber enfin ensemble.
+  </text>
 </view>
 
 <view class="tc lh21 mb100">
@@ -243,7 +243,7 @@
     </view>
 </form>
 <view class="tips lh21">
-  <view>
+  <view class="size-45 handwriting">
     Tips
   </view>
   <view class="tips-content">
@@ -283,16 +283,16 @@
 <view class="end-images-wrap mt152 mb252">
   <view class="end1">
     <view class="end1-text co size-45 lh21 handwriting">
-      The most beautiful thing in the world is that when I like you.you also like me.
+      The best thing I could ever do, is to live a good ordinary life, with you.
     </view>
-    <image src="{{cloudImages.end1}}" mode="widthFix"/>
+    <image class="end1-image" src="{{cloudImages.end1}}" mode="widthFix"/>
   </view>
   <view class="end2">
-    <image src="{{cloudImages.end2}}" mode="widthFix"/>
+    <image class="end2-image" src="{{cloudImages.end2}}" mode="widthFix"/>
     <image class="xi-image3" src="../../images/xi.png" mode="widthFix"/>
   </view>
   <view class="end3">
-    <image src="{{cloudImages.end3}}" mode="widthFix"/>
+    <image class="end3-image" src="{{cloudImages.end3}}" mode="widthFix"/>
   </view>
 </view>
 

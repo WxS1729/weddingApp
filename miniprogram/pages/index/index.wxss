@@ -14,6 +14,7 @@
 .title {
     position: relative;
     width: 100%;
+    min-height: 800rpx;
 }
 
 /* 渐变遮罩层 - 图片底部渐变过渡到黑色 */
@@ -421,7 +422,7 @@
   position: absolute;
   bottom: -6%;
   right: -20rpx;
-  width: 400rpx;
+  width: 420rpx;
 }
 
 .step-wrap{
@@ -442,7 +443,7 @@
 
 .step-text{
   position: absolute;
-  bottom: -120rpx;
+  bottom: -100rpx;
   right: 0rpx;
   width: 350rpx;
 }
@@ -663,7 +664,7 @@
 .countdown-text{
   font-size: 40rpx;
   z-index: 2;
-  width: 500rpx;
+  width: 400rpx;
   position: absolute;
   bottom: 0;
   left: 10%;
@@ -1020,6 +1021,10 @@
   position: relative;
 }
 
+.end1-image{
+  width: 500rpx;
+}
+
 .end1-text{
   position: absolute;
   right: 10rpx;
@@ -1031,6 +1036,10 @@
   position: relative;
   display: flex;
   align-items: center;
+}
+
+.end2-image{
+  width: 400rpx;
 }
 
 .xi-image3{
@@ -1045,6 +1054,10 @@
   display: flex;
   justify-content: flex-end;
   width: 100%;
+}
+
+.end3-image{
+  width: 500rpx;
 }
 
 .end3-text{
