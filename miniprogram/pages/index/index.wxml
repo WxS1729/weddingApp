@@ -236,9 +236,9 @@
             <text>*</text>
             <input type="number" placeholder="出席人数" name="num" value="{{ form.num }}" placeholder-class="form-input-placeholder" maxlength="2" />
         </view>
-        <view>
+        <!-- <view>
             <textarea type="text" placeholder="祝福语~" name="greeting" value="{{ form.greeting }}" placeholder-class="form-input-placeholder" maxlength="140" disable-default-padding />
-        </view>
+        </view> -->
         <button hover-class="none" form-type="submit" open-type="getUserInfo">{{ name ? '更新' : '提交' }}</button>
     </view>
 </form>
