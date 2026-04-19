@@ -19,6 +19,10 @@ Page({
         carouselFinished: false, // 祝福语是否已轮播完一遍
         loadingVisible: true, // 加载动画是否可见
         loadingHidden: false, // 加载动画是否已完全隐藏
+        loadingChars: 'Welcome to our wedding~'.split('').map((char, i) => ({
+            char: char === ' ' ? '\u00A0' : char,
+            delay: i * 0.1
+        })),
         form: { // 表单信息
             name: '',
             num: '',
@@ -167,9 +171,9 @@ Page({
         } else if (rectTop <= -320 - h) {
             o1 = 0; o2 = 1
         } else {
-            const progress = (-320 - rectTop) / h
+            const progress = (-120 - rectTop) / h
             o1 = 1 - progress
-            o2 = progress
+            o2 = progress * progress
         }
 
         this.setData({ exchangeOpacity1: o1, exchangeOpacity2: o2 })

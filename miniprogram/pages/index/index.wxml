@@ -1,6 +1,8 @@
 <!-- 加载动画遮罩 -->
 <view class="loading-mask {{ loadingVisible ? '' : 'loading-fade-out' }}" wx:if="{{ !loadingHidden }}">
-    <view class="loading-spinner"></view>
+    <view class="loading-text">
+        <text class="loading-char" wx:for="{{loadingChars}}" wx:key="index" style="animation-delay: {{item.delay}}s">{{item.char}}</text>
+    </view>
 </view>
 
 <view class="music-controls {{ musicIsPaused ? 'paused' : '' }}" bindtap="toggleMusic">

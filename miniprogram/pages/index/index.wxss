@@ -19,22 +19,32 @@
     pointer-events: none;
 }
 
-.loading-spinner {
+.loading-text {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 40rpx;
-    height: 40rpx;
-    border: 4rpx solid rgba(255, 255, 255, 0.2);
-    border-top-color: rgba(255, 255, 255, 0.8);
-    border-radius: 50%;
-    animation: loading-spin 0.8s linear infinite;
+    display: flex;
+    font-size: 55rpx;
+    color: rgba(255, 255, 255, 0.15);
+    font-family: 'Caveat', cursive;
+    letter-spacing: 4rpx;
 }
 
-@keyframes loading-spin {
-    from { transform: translate(-50%, -50%) rotate(0deg); }
-    to { transform: translate(-50%, -50%) rotate(360deg); }
+.loading-char {
+    animation: charFade 2.4s ease-in-out infinite;
+}
+
+@keyframes charFade {
+    0%, 100% {
+        color: rgba(255, 255, 255, 0.15);
+    }
+    30% {
+        color: rgba(255, 255, 255, 0.9);
+    }
+    60% {
+        color: rgba(255, 255, 255, 0.15);
+    }
 }
 
 @font-face {
