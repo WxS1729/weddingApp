@@ -14,6 +14,7 @@ Page({
         isManager: false, // 当前用户是否为管理员
         musicIsPaused: false, // 是否暂停背景音乐
         activeIdx: isRemoved ? 0 : -1, // 祝福语轮播用，当前显示的祝福语索引值
+        carouselFinished: false, // 祝福语是否已轮播完一遍
         form: { // 表单信息
             name: '',
             num: '',
@@ -337,7 +338,7 @@ Page({
                                 num,
                                 greeting
                             },
-                            greetings
+                            greetings: greetings.filter(item => item.greeting && item.greeting.trim())
                         })
                         this.isSubmit = false
                         wx.showToast({
@@ -361,22 +362,25 @@ Page({
             }
         }) => {
             const isManager = MANAGER.indexOf(openid) > -1
-            greetings.length && this.setData(this.data.activeIdx === -1 ? {
+            const validGreetings = greetings.filter(item => item.greeting && item.greeting.trim())
+            validGreetings.length && this.setData(this.data.activeIdx === -1 && !this.data.carouselFinished ? {
                 isManager,
-                greetings,
+                greetings: validGreetings,
                 activeIdx: 0
             } : {
                 isManager,
-                greetings
+                greetings: validGreetings
             })
         })
     },
 
-    // 轮播动画结束时切换到下一个
+    // 轮播动画结束时切换到下一个，轮播一遍后停止
     onAnimationend() {
-        this.setData({
-            activeIdx: (this.data.activeIdx === this.data.greetings.length - 1) ? 0 : (this.data.activeIdx + 1)
-        })
+        if (this.data.activeIdx === this.data.greetings.length - 1) {
+            this.setData({ activeIdx: -1, carouselFinished: true })
+        } else {
+            this.setData({ activeIdx: this.data.activeIdx + 1 })
+        }
     },
 
     // 跳转到联系新郎新娘板块

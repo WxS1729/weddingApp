@@ -1,3 +1,8 @@
+<!-- 加载动画遮罩 -->
+<view class="loading-mask {{ loadingVisible ? '' : 'loading-fade-out' }}" wx:if="{{ !loadingHidden }}">
+    <view class="loading-spinner"></view>
+</view>
+
 <view class="music-controls {{ musicIsPaused ? 'paused' : '' }}" bindtap="toggleMusic">
     <image src="../../images/icon/music.png" mode="aspectFit" />
 </view>
@@ -7,7 +12,7 @@
       <text class="title-left handwriting">WEDDING\nDAY</text>
       <text class="title-right">5\n24</text>
     </view>
-    <image class="top-background" src="{{ cloudImages.topBackground }}"  mode="widthFix"/>
+    <image class="top-background" src="{{ cloudImages.topBackground }}" mode="widthFix" bindload="hideLoading"/>
     <image class="top" src="{{ cloudImages.top }}"  mode="widthFix"/>
     <image class="title-image-text" src="../../images/title-text.png"  mode="widthFix"/>
 </view>
@@ -308,7 +313,7 @@
 <!-- 祝福语轮播以及底部快捷跳转 -->
 <view wx:if="{{ magic }}" class="greetings">
     <view class="greetings-list">
-        <view class="greetings-item {{ activeIdx === index ? 'active' : '' }}" wx:for="{{ greetings }}" wx:key="_id" bind:animationend="onAnimationend"><text class="greetings-name">{{ item.name }}：</text>{{ item.greeting || '新婚快乐' }}</view>
+        <view class="greetings-item {{ activeIdx === index ? 'active' : '' }}" wx:for="{{ greetings }}" wx:key="_id" bind:animationend="onAnimationend"><text class="greetings-name">{{ item.name }}：</text>{{ item.greeting}}</view>
     </view>
     <view class="controller">
         <view class="controller-btn">

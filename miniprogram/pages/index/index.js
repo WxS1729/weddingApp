@@ -16,6 +16,9 @@ Page({
         exchangeOpacity1: 1,
         exchangeOpacity2: 0,
         activeIdx: isRemoved ? 0 : -1, // 祝福语轮播用，当前显示的祝福语索引值
+        carouselFinished: false, // 祝福语是否已轮播完一遍
+        loadingVisible: true, // 加载动画是否可见
+        loadingHidden: false, // 加载动画是否已完全隐藏
         form: { // 表单信息
             name: '',
             num: '',
@@ -333,6 +336,9 @@ Page({
 
     // 小程序可用时，初始化背景音乐并自动播放
     onReady() {
+        // 开始渐变隐藏加载动画
+        this.hideLoading()
+
         // 缓存 exchange-wrap 的初始位置
         const query = wx.createSelectorQuery().in(this)
         query.select('.exchange-wrap').boundingClientRect()
@@ -459,12 +465,12 @@ call(e) {
                     }) => {
                         const greetings = this.data.greetings
                         !greetings.some(item => {
-                            if (item._id === _id) { // 如果找到了该祝福语，更新之
+                            if (item._id === _id) { // 如果找到了该祝福语，更新
                                 item.greeting = greeting
                                 return true
                             }
                             return false
-                        }) && greetings.push({ // 如果没有找到，追加之
+                        }) && greetings.push({ // 如果没有找到，追加
                             name,
                             greeting,
                             _id
@@ -475,7 +481,7 @@ call(e) {
                                 num,
                                 greeting
                             },
-                            greetings
+                            greetings: greetings.filter(item => item.greeting && item.greeting.trim())
                         })
                         this.isSubmit = false
                         wx.showToast({
@@ -499,22 +505,34 @@ call(e) {
             }
         }) => {
             const isManager = MANAGER.indexOf(openid) > -1
-            greetings.length && this.setData(this.data.activeIdx === -1 ? {
+            const validGreetings = greetings.filter(item => item.greeting && item.greeting.trim())
+            validGreetings.length && this.setData(this.data.activeIdx === -1 && !this.data.carouselFinished ? {
                 isManager,
-                greetings,
+                greetings: validGreetings,
                 activeIdx: 0
             } : {
                 isManager,
-                greetings
+                greetings: validGreetings
             })
         })
     },
 
-    // 轮播动画结束时切换到下一个
+    // 轮播动画结束时切换到下一个，轮播一遍后停止
     onAnimationend() {
-        this.setData({
-            activeIdx: (this.data.activeIdx === this.data.greetings.length - 1) ? 0 : (this.data.activeIdx + 1)
-        })
+        if (this.data.activeIdx === this.data.greetings.length - 1) {
+            this.setData({ activeIdx: -1, carouselFinished: true })
+        } else {
+            this.setData({ activeIdx: this.data.activeIdx + 1 })
+        }
+    },
+
+    // 封面图片加载完成后渐变隐藏加载动画
+    hideLoading() {
+        if (!this.data.cloudImages.topBackground) return
+        this.setData({ loadingVisible: false })
+        setTimeout(() => {
+            this.setData({ loadingHidden: true })
+        }, 800)
     },
 
     // 跳转到联系新郎新娘板块
