@@ -296,7 +296,7 @@
 }
 
 .love {
-    font-family: 微软雅黑;
+    font-family: SimSun, serif;
     font-size: 196rpx;
     line-height: 1;
     font-weight: bold;

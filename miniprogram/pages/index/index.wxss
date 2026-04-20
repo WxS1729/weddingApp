@@ -149,7 +149,7 @@
 
 .invitation-text{
   text-align: right;
-  font-family: 'siyuansongtichanggui_1', 'siyuansongtichanggui_2', 'siyuansongtichanggui' !important;
+  font-family: SimSun, serif;
 }
 
 .img-person{
@@ -255,7 +255,7 @@
     flex-direction: row;
     align-items: center;
     gap: 12rpx;
-    font-family: 'muyaosuixin_1','muyaosuixin_2','muyaosuixin' !important;
+    font-family: 'SimSun', serif !important;
 }
 
 .music-progress-bar {
@@ -282,7 +282,7 @@
 }
 
 .music-time{
-  font-family: "PingFangSC-Light", "PingFangSC";
+  font-family: "SimSun", serif;
   font-size: 24rpx;
   line-height: 1;
   display: flex;
@@ -549,6 +549,10 @@
   gap: 20rpx;
   padding: 0 20rpx;
   text-align: right;
+}
+
+.yzhm-image{
+  width: 350rpx;
 }
 
 .exchange-wrap{
@@ -875,7 +879,7 @@
 }
 
 .love {
-    font-family: 微软雅黑;
+    font-family: SimSun, serif;
     font-size: 196rpx;
     line-height: 1;
     font-weight: bold;

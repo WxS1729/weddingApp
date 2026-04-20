@@ -3,7 +3,7 @@ page {
     overflow-x: hidden;
     box-sizing: border-box;
     font-size: 26rpx;
-    font-family: PingFangSC-Light;
+    font-family: SimSun, serif;
     color: #fff;
     letter-spacing: 2rpx;
     margin: 0;

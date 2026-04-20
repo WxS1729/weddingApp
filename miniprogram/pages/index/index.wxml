@@ -145,17 +145,8 @@
     <image class="tel-image" src="{{ cloudImages.telGirl }}" mode="widthFix"/>
   </view>
 </view>
-<!-- todo换字体 行楷 -->
 <view class="end-text mb100">
-  <view>
-    宇宙好美
-  </view>
-  <view>
-    谢谢命运
-  </view>
-  <view>
-    姻缘天注定
-  </view>
+  <image class="yzhm-image" src="../../images/yzhm.png" mode="widthFix"/>
 </view>
 
 <view class="exchange-wrap mb100">
