@@ -365,7 +365,6 @@ Page({
     // 分享到会话
     onShareAppMessage() {
         return {
-            title: '好久不见，婚礼见٩(๑^o^๑)۶',
             imageUrl: '../../images/shareAppMsg.jpg'
         }
     },
@@ -373,7 +372,6 @@ Page({
     // 分享到朋友圈
     onShareTimeline() {
         return {
-            title: '好久不见，婚礼见٩(๑^o^๑)۶',
             imageUrl: '../../images/shareTimeline.jpg'
         }
     },
