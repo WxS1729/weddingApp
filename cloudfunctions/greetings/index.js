@@ -20,10 +20,17 @@ exports.main = async (event, context) => {
         tasks.push(collection.skip(i * MAX_LIMIT).limit(MAX_LIMIT).get())
     }
 
+    // 查询当前用户是否为管理员
+    const { data: currentUser } = await surveys.where({
+        _openid: OPENID
+    }).get()
+    const isAdmin = currentUser.length && currentUser[0].isAdmin === true
+
     return {
         greetings: (await Promise.all(tasks)).reduce((acc, cur) => {
             return acc.concat(cur.data.map(({ _id, name, greeting }) => ({ _id, name, greeting })))
         }, []),
-        openid: OPENID
+        openid: OPENID,
+        isAdmin: isAdmin
     }
 }

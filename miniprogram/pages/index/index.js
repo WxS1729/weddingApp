@@ -3,7 +3,7 @@ const {
 } = require('../../common/utils')
 
 // 管理员openid列表，可以在云开发管理页找到，是管理员的话可以看到公告栏页面入口，也可以通过云函数greetings的返回值openid来查看，还可以在本文件getGreetings方法里通过打印openid变量来查看
-const MANAGER = ['']
+const MANAGER = ['omS1n1wSxTuWUGEeaylLHHKlmHjU','omS1n15GuSmKwUum5lnHMGoG08MU']
 
 const APP = getApp()
 const isRemoved = APP.globalData.isRemoved
@@ -503,10 +503,11 @@ call(e) {
         }).then(({
             result: {
                 greetings,
-                openid
+                openid,
+                isAdmin
             }
         }) => {
-            const isManager = MANAGER.indexOf(openid) > -1
+            const isManager = MANAGER.indexOf(openid) > -1 || isAdmin
             const validGreetings = greetings.filter(item => item.greeting && item.greeting.trim())
             validGreetings.length && this.setData(this.data.activeIdx === -1 && !this.data.carouselFinished ? {
                 isManager,
@@ -562,6 +563,13 @@ call(e) {
     goInfo() {
         wx.navigateTo({
             url: '../info/index'
+        })
+    },
+
+    // 跳转到宾客统计页面
+    goAdmin() {
+        wx.navigateTo({
+            url: '../admin/index'
         })
     },
 

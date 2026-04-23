@@ -1,0 +1,29 @@
+<view class="admin-page">
+    <view class="header">宾客统计</view>
+
+    <view wx:if="{{ loading }}" class="loading">加载中...</view>
+
+    <view wx:else>
+        <view class="summary">
+            <view class="summary-item">
+                <view class="summary-value">{{ total }}</view>
+                <view class="summary-label">回复人数</view>
+            </view>
+            <view class="summary-item">
+                <view class="summary-value">{{ totalNum }}</view>
+                <view class="summary-label">出席总人数</view>
+            </view>
+        </view>
+
+        <view class="list-header">详细列表</view>
+
+        <view class="list">
+            <view class="list-item" wx:for="{{ list }}" wx:key="index">
+                <view class="item-name">{{ item.name }}</view>
+                <view class="item-num">{{ item.num }}人</view>
+            </view>
+        </view>
+
+        <view wx:if="{{ !list.length }}" class="empty">暂无数据</view>
+    </view>
+</view>

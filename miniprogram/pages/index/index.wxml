@@ -318,10 +318,8 @@
         <view class="controller-btn">
             <image bindtap="openLocation" src="../../images/icon/go.png" mode="widthFix" />
         </view>
+        <view wx:if="{{ isManager }}" class="controller-btn">
+            <image bindtap="goAdmin" src="../../images/icon/manager.png" mode="widthFix" />
+        </view>
     </view>
-</view>
-
-<!-- 公告栏入口 -->
-<view wx:if="{{ isManager }}" class="manager">
-    <image bindtap="goInfo" src="../../images/icon/manager.png" mode="widthFix"/>
 </view>

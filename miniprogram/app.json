@@ -1,8 +1,9 @@
 {
 	"pages": [
 		"pages/index/index",
-		"pages/info/index"
-  ],
+		"pages/info/index",
+		"pages/admin/index"
+	],
   "requiredPrivateInfos":[
     "chooseLocation"
   ],
